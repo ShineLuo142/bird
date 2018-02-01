@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<title>【钻石小鸟官网】钻石|钻戒品牌_对戒|钻戒定制网_钻石图片_钻石交易网|婚戒定制国内知名品牌-钻石小鸟官网-钻石小鸟官网</title>
 		<link rel="stylesheet" href="./css/style.css">
+		<link rel="stylesheet" href="./../static/css/swiper.min.css">
 		<script src="./../static/js/vendor.js"></script>
 		<script src="./js/script.js"></script>
 		<script src="./js/swiper.min.js"></script>
@@ -512,34 +513,20 @@
 		<div class="gotop"></div>
 		<!-- //banner: -->
 		<div class="banner">
-			<ul class="navlist">
-				<li>
-					<a href="#">
-						<img src="image/banner1.jpg" alt="">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="image/banner2.jpg" alt="">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="image/banner3.jpg" alt="">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="image/banner4.jpg" alt="">
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<img src="image/banner5.jpg" alt="">
-					</a>
-				</li>
-				<ul class="bannerlittle"></ul>
-			</ul>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" style="background-image:url(image/banner1.jpg)"></div>
+					<div class="swiper-slide" style="background-image:url(image/banner2.jpg)"></div>
+					<div class="swiper-slide" style="background-image:url(image/banner3.jpg)"></div>
+					<div class="swiper-slide" style="background-image:url(image/banner4.jpg)"></div>
+					<div class="swiper-slide" style="background-image:url(image/banner5.jpg)"></div>
+				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination swiper-pagination-white"></div>
+				<!-- Add Arrows -->
+				<div class="swiper-button-next swiper-button-white"></div>
+				<div class="swiper-button-prev swiper-button-white"></div>
+			</div>
 		</div>
 
 
@@ -653,5 +640,24 @@
 
 			</div>
 		</div>
+
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+				spaceBetween: 30,
+				effect: 'fade',
+				pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+				},
+				autoplay: {
+				delay: 2500,
+				disableOnInteraction: false,
+				},
+				navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+				},
+		  });
+		</script>
 	</body>
 </html>

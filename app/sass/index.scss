@@ -1,17 +1,17 @@
 /*banner*/
 .banner{
-    height: 600px;
     width: 100%;
-    .navlist{
-        width: 20000px;
-
-    }
-    li{
-        float: left;
-    }
-    img{
-        height: 600px;
-    }
+    position: relative;
+    height: 600px;
+    z-index: -1;
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+      }
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+      }
 }
 
 
