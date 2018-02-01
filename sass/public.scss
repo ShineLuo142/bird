@@ -1,0 +1,113 @@
+@import "reset.css";
+$fontSize: 12px;
+$f8e3df:#f8e3df;
+.top-wrap{
+    background-color: $f8e3df;
+    height: 34px;
+    .top{
+        background-color: $f8e3df;
+        height: 34px;
+        width: 1180px;
+        margin: 0 auto;
+
+        .welcome{
+            float: left;
+            a{
+                width: auto;
+                height: 34px;
+                line-height: 34px;
+                display: block;
+                float: left;
+                color: #333;
+                margin: 0 10px 0 10px;
+            }
+ 
+        }
+        .topnav{
+            float:right;
+            li{
+                height: 34px;
+                float: left;
+                margin-left: 12px;
+                padding-left: 10px;
+                position: relative;
+                .top-bag{
+                    float: left;
+                    width: 12px;
+                    height: 16px;
+                    margin-top: 9px;
+                    margin-right: 10px;
+                }
+                a{
+                    width: 58px;
+                    height: 32px;
+                    display: block;
+                    line-height: 32px;
+                    color: #333;
+                    float: left;
+                    .shop-count{
+                        width: 20px;
+                        line-height: 32px;
+                        text-align: center;
+                        display: inline-block;
+                        font-size: 13px;
+                        color: #ff8a81;
+                    }
+                }
+            .topshow{
+                height: 32px;               
+                position: relative;
+                border: 1px solid transparent; 
+                z-index: 10;
+                padding: 0 8px;
+                
+            }
+            .tophide{
+                display: none;
+                position: absolute;
+                top: 32px;
+                left: 10px;
+                overflow: hidden;
+                padding-bottom: 0px;
+                border: 1px solid #f8a89c;
+                background-color: #FFF;
+                z-index: 9;
+            }
+            .topcar{
+                width: 240px;
+                min-height: 59px;
+            } 
+            .mycart{
+                width: 79px;
+                a{
+                    width: 79px;
+                    text-align: center;
+                }   
+            } 
+            .phoneweb{
+                left: -148px;
+                width: 232px;
+            } 
+            }
+        }
+    }
+}
+/*search :*/
+.search-wrap{
+    background-color: #fbf2f1;
+    height: 95px;
+    .search{
+        background-color: #fbf2f1;
+        height: 95px;
+        width: 1180px;
+        margin: 0 auto;
+        img{
+            float: left;
+            margin-left: 35px;
+            margin-top: 28px;
+        } 
+        .searchform{
+            float: right;
+        }
+    }
+}
