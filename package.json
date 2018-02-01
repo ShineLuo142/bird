@@ -1,5 +1,31 @@
 {
+  "name": "test",
+  "version": "1.0.0",
+  "description": "This is for study gulp project !",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/xxxx"
+  },
+  "author": {
+    "name": "",
+    "email": "@qq.com"
+  },
+  "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.2.0",
+    "gulp-less": "^3.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-server-livereload": "^1.9.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0",
+    "gulp-webserver": "^0.9.1"
   }
 }
