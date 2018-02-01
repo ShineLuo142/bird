@@ -166,10 +166,14 @@ $f8e3df:#f8e3df;
         background: #909090;
         width: 1180px;
         margin: 0 auto; 
+        position: relative;
         .navleft{
-            float: left;
+            float: left;            
             li{
                 float: left;
+                .navindex{
+                        background-color: #fdb2a4
+                    }
                 a{
                     color: #fff;
                     font-size: 13px;
@@ -177,7 +181,57 @@ $f8e3df:#f8e3df;
                     width: 97px;
                     text-align: center;
                     display: block;
+                    &:hover{
+                        background-color: #fdb2a4
+                    }
+                    
+                }             
+            }
+
+
+        }
+        .navhide{
+            display: none;
+            position: absolute;
+            top:33px;
+            left: 0px;
+            width: 1180px;
+            height: 305px;
+            background: white;
+            ul{
+                float: left;
+                width: 150px;
+                margin-top: 30px; 
+                 h2{
+                    color: #000;
+                    font-size: 24px;  
                 }
+                li{
+                    float: left; 
+                    width: 150px;
+                    margin-left: 30px;    
+                                   
+                    a{
+                        color: #666;
+                        line-height: 26px;
+                        letter-spacing: 1px;
+                        display: inline-block;
+                    }
+                }
+            }
+            ul:nth-child(2){
+                margin-top: 84px;
+                            }
+            ul:nth-child(3){
+                padding-top: 50px;
+                border-left: 1px solid rgb(229, 229, 229);
+                height: 190px;
+
+            }
+            div{
+                float: right;
+                margin-top: 30px;
+                margin-right: 20px;
             }
         }
         .navright{
@@ -191,7 +245,11 @@ $f8e3df:#f8e3df;
                     width: 97px;
                     text-align: center;
                     display: block;
+                    &:hover{
+                        background-color: #fdb2a4
+                    }
                 }
+                
 
             }
         } 
@@ -211,16 +269,182 @@ $f8e3df:#f8e3df;
     a:nth-child(1){
         background: url(../image/1.gif) ;
         position: relative;
+        &:hover{
+            background: url(../image/1.2.gif);
+        }
         &:before{
+            content: '';
             background: url(../image/img1.png) ;
             width: 88px;
             height: 95px;
             display: block;
             position: absolute;
             right: 0;
-            top: -94px;
-            
+            top: -94px;            
+        }
+        
+    }
+    a:nth-child(2){
+        background: url(../image/2-1.jpg);
+        &:hover{
+            background: url(../image/2.jpg);
+        }
+    }
+    a:nth-child(3){
+        background: url(../image/3-1.jpg);
+        &:hover{
+            background: url(../image/3.jpg);
+        }
+    }
+    a:nth-child(4){
+        background: url(../image/4.1.jpg);
+        &:hover{
+            background: url(../image/4.jpg);
+        }
+    }
+    a:nth-child(5){
+        background: url(../image/5.jpg);
+        position: relative;
+        div{
+            position: absolute;
+            left: -207px;
+            z-index: 1;
+            bottom: 0;
+            background: url(../image/code.jpg);
+            width: 206px;
+            height: 135px;
+            display: none;
+        }
+        &:hover div{
+           display: block;
         }
     }
 
+}
+/*gotop回到顶部*/
+.gotop{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+    background: url(../image/gotop.jpg);
+    background-position: 0px -40px;
+    cursor: pointer;
+    &:hover{
+        background-position: 40px 0px;
+    }
+    display: none;
+}
+/*footer*/
+.footer-wrap{
+    height: 550px;
+    background-color: #fdf2ec;
+    .footer{
+        width: 1180px;
+        height: 550px;
+        margin: 0 auto;
+        background-color: #fdf2ec;
+        .footertop{
+            width: 100%;
+            height: 66px;
+            background:url(../image/footertop.jpg);
+            a{
+                height: 66px;
+                display: inline-block;
+            }
+            a:nth-child(1){
+                width: 201px;
+            }
+            a:nth-child(2){
+                width: 195px;
+            }
+            a:nth-child(3){
+              width: 211px;
+            }
+            a:nth-child(4){
+                width:  197px;
+            }
+            a:nth-child(5){
+                width:  197px;
+            }
+            a:nth-child(6){
+                width: 162px;
+            }
+            
+        }
+        .footermain{
+            div {
+                float: left;
+                margin-right: 82px;
+                a{
+                    width: 85px;
+                    height: 90px;
+                    float: left;
+                    margin-left: 30px;
+                    margin-top: 44px;
+                    display: block;
+                    background:  url(../image/footlogo.jpg)no-repeat;
+                }
+            }
+            ul{
+                float: left;
+                width: 145px;
+                margin-top: 37px;
+                li a{
+                    width: 96px;
+                    line-height: 22px;
+                    color: #999999;
+                    display: block;
+                    text-align: left;
+                }
+                li:first-child a{
+                    width: 96px;
+                    height: 23px;
+                    display: block;
+                    color: #666666;
+                    font-size: 12px;
+                    text-align: left;
+                }
+
+            }
+            img{
+                width: 214px;
+                height: 120px;
+                float: right;
+                margin-top: 30px;
+                margin-left: 6px;
+            }
+            
+        }
+        .footcall{
+            padding: 21px 0;
+            text-align: center;
+            a{
+               margin-left: 46px;
+                background: url(../image/footcall.jpg);
+                width: 488px;
+                height: 60px;
+                display: inline-block; 
+            }
+            
+        }
+        .coopright{
+            text-align: center;
+            a,span,p{
+                line-height: 33px;
+                color: #999;
+            }
+            span{
+                padding: 0 8px 0 10px;
+            }
+        }
+        .footimg{
+            text-align: center;
+            padding-top: 13px;
+            img{
+                height: 35px;
+            }
+        }
+    }
 }
