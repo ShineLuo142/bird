@@ -191,6 +191,7 @@ $f8e3df:#f8e3df;
 
         }
         .navhide{
+            z-index: 1;
             display: none;
             position: absolute;
             top:33px;
@@ -257,6 +258,7 @@ $f8e3df:#f8e3df;
 }
 /*aside*/
 .aside{
+    z-index: 10;
     position: fixed;
     right: 0;
     top: 50%;

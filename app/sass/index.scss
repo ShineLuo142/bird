@@ -3,7 +3,7 @@
     width: 100%;
     position: relative;
     height: 600px;
-    z-index: -1;
+    z-index: 0;
     .swiper-container {
         width: 100%;
         height: 100%;
@@ -12,6 +12,12 @@
         background-position: center;
         background-size: cover;
       }
+    .swiper-button-next{
+        right: 160px !important;
+    }  
+    .swiper-button-prev{
+        left: 160px !important
+    }
 }
 
 
