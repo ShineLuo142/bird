@@ -40,7 +40,7 @@ gulp.task('concatjs', function () {
 })
 
 
-gulp.task('concatcss',['clean','sass'],function(){
+gulp.task('concatcss',['sass'],function(){
     gulp.src('./app/css/*.css')
         .pipe(concat('style.css'))
         .pipe(gulp.dest('app/css'))
@@ -49,7 +49,7 @@ gulp.task('concatcss',['clean','sass'],function(){
         // .pipe(gulp.dest('static/css'))
 })
 
-gulp.task("sass", function () {
+gulp.task("sass",['clean'], function () {
     return gulp.src('app/sass/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
