@@ -108,9 +108,119 @@ $f8e3df:#f8e3df;
         } 
         .searchform{
             float: right;
+            height: 60px;
+            margin-top: 31px;
+            .searchtxt{
+                width: 146px;
+                height: 32px;
+                color: #999;
+                line-height: 16px;
+                padding: 7px 0 7px 10px;
+                margin: 0;
+                float: left;
+                border-top: 1px solid #ccc;
+                border-left: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                border-right:0;
+            }
+            .searchsub{
+                width: 40px;
+                height: 32px;
+                float: left;
+                overflow: hidden;
+                background: url(../image/search.jpg) no-repeat left top;
+                line-height: 32px;
+                border-top: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+                border-left:0;
+               
+            } 
+            a{
+                width: 78px;
+                height: 30px;
+                display: block;
+                margin-left: 11px;
+                color: #666;
+                border: 1px solid #ccc;
+                line-height: 30px;
+                background: #fff;
+                float:left;
+                text-align: center;
+                &:hover{
+                    color: #ff8a81;
+
+                }
+            }
         }
+        
     }
 }
-.login{
-    background: red
+/*nav:*/
+.nav-wrap{
+    width: 100%;
+    height: 33px;
+    background: #909090;
+    .nav{
+        height: 33px;
+        background: #909090;
+        width: 1180px;
+        margin: 0 auto; 
+        .navleft{
+            float: left;
+            li{
+                float: left;
+                a{
+                    color: #fff;
+                    font-size: 13px;
+                    line-height: 33px;
+                    width: 97px;
+                    text-align: center;
+                    display: block;
+                }
+            }
+        }
+        .navright{
+            float: right;
+            li{
+                float: left;
+                a{
+                    color: #fff;
+                    font-size: 13px;
+                    line-height: 33px;
+                    width: 97px;
+                    text-align: center;
+                    display: block;
+                }
+
+            }
+        } 
+    }
+}
+/*aside*/
+.aside{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    a{
+      display: block;
+      width: 67px;
+      height: 67px; 
+    }
+    a:nth-child(1){
+        background: url(../image/1.gif) ;
+        position: relative;
+        &:before{
+            background: url(../image/img1.png) ;
+            width: 88px;
+            height: 95px;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: -94px;
+            
+        }
+    }
+
 }

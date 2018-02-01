@@ -5,7 +5,9 @@
 		<meta charset="UTF-8">
 		<title>【钻石小鸟官网】钻石|钻戒品牌_对戒|钻戒定制网_钻石图片_钻石交易网|婚戒定制国内知名品牌-钻石小鸟官网-钻石小鸟官网</title>
 		<link rel="stylesheet" href="./css/style.css">
-		
+		<script src="./../static/js/vendor.js"></script>
+		<script src="./js/script.js"></script>
+		<script src="./js/swiper.min.js"></script>
 	</head>
 	<body>
 		<div class="top-wrap">
@@ -50,16 +52,61 @@
 			<div class="search">
 				<img src="./image/logo.png" alt="小鸟钻石">
 				<div class="searchform">
-					<input type="text" placeholder="戒托">
-					<input type="submit" value="　">
+					<input type="text" placeholder="戒托" class="searchtxt">
+					<input type="submit" value="　" class="searchsub">
+					<a href="#">来店预约</a>
 				</div>
+				
 			</div>
         </div>
-        <p>
-            <a href="./html/login.html">测试</a>
-        </p>
-      
-        <script src="./../static/js/vendor.js"></script>
-        <script src="./js/script.js"></script>
+		<div class="nav-wrap">
+			<div class="nav">
+				<div class="navleft">
+					<ul>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">钻石</a></li>
+						<li><a href="#">婚戒</a></li>
+						<li><a href="#">对戒</a></li>
+						<li><a href="#">配饰</a></li>
+						<li><a href="#">定制</a></li>
+						<li><a href="#">体验中心</a></li>						
+					</ul>
+				</div>
+				<div class="navright">
+					<ul>
+						<li><a href="#">商务加盟</a></li>
+						<li><a href="#">品牌故事</a></li>
+						<li><a href="#">鸟巢论坛</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="aside">
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+		</div>
+		<!-- //banner: -->
+		<script>
+		var swiper = new Swiper('.swiper-container', {
+			spaceBetween: 30,
+			effect: 'fade',
+			pagination: {
+			  el: '.swiper-pagination',
+			  clickable: true,
+			},
+			autoplay: {
+			  delay: 2500,
+			  disableOnInteraction: false,
+			},
+			navigation: {
+			  nextEl: '.swiper-button-next',
+			  prevEl: '.swiper-button-prev',
+			},
+		  });
+      </script>
+        
 	</body>
 </html>
