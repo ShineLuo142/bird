@@ -3,6 +3,7 @@
 
 $(function(){
     
+    
     function HoverEvent(){
         this.init();
     }
