@@ -18,6 +18,19 @@
     .swiper-button-prev{
         left: 160px !important
     }
+    .swiper-pagination-bullet{
+        height: 14px !important;
+        width: 14px !important;
+
+    } 
+    .swiper-pagination-bullet-active{
+        background-color: rgb(255,138,129) !important
+
+    }
+}
+.main-wrap{
+    background-color: red;
+    min-height:550px;
 }
 
 
