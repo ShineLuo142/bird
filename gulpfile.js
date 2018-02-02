@@ -15,6 +15,7 @@ var uglifyConfig = [
     'static/js/jquery.min.js',
     'static/js/jquery.cookie.js',
     'static/js/swiper.min.js',
+    'static/js/jquery.lazyload.js',
 ]
 gulp.task('clean', function () {
     return gulp.src('app/css/*')

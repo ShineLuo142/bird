@@ -21,16 +21,91 @@
     .swiper-pagination-bullet{
         height: 14px !important;
         width: 14px !important;
+        background-color: black;
+        opacity: .3;
 
     } 
     .swiper-pagination-bullet-active{
-        background-color: rgb(255,138,129) !important
+        background-color: #ff8a81 !important;
+        opacity: 1;
 
     }
 }
 .main-wrap{
-    background-color: red;
+    
     min-height:550px;
+    .main{
+        width: 1180px;
+        margin: 0 auto;
+        .designring{
+            height: 445px;
+            margin: 45 0px;
+            .dr-left{
+                height: 445px;
+                background: #f7f7f7;
+                width: 580px;
+                h2{
+                    font-size: 26px;
+                    margin: 0;
+                    width: 580px;
+                    text-align: center;
+                    margin: 45px 0 27px;
+                }
+                .dr-leftbanner{
+                    width: 352px;
+                    height: 190px;
+                     margin: 0 auto;
+                }
+                a{
+                    display: block;
+                    width: 204px;
+                    height: 34px;
+                    line-height: 34px;
+                    background: #f6827a;
+                    color: #fff;
+                    text-align: center;
+                    margin: 12px auto;
+                    &:hover{
+                        opacity: 0.85;
+                    }
+                }
+            }
+            .designringright{
+                width: 578px;
+                height: 445px;
+                a{
+                    display: block;
+                    width: 578px;
+                    height: 445px;
+                    img{
+                        width: 578px;
+                        height: 445px;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .product{
+        width: 1180px;
+        margin: 0 auto;
+        h2{
+            color: #000;
+            font-size: 24px;
+            text-align: center;
+            width: 1180px;
+            line-height: 24px;
+            margin: 20px 0;
+        }
+        .product-nav{
+            background: #feb8ae;
+            text-align: center;
+            margin-top: 45px;
+            height: 37px;
+            width: 1180px;
+        }
+    }
 }
+
 
 

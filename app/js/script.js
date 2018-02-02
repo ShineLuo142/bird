@@ -1,6 +1,4 @@
 
-//top部分tab切换效果：
-
 $(function(){
     
     
@@ -12,8 +10,11 @@ $(function(){
             this.topNavEvent();
             this.navShowEvent();
             this.goTop();
+            this.mainImgHover();
         },
+        
         topNavEvent:()=>{
+            //top部分tab切换效果：
             $('.topnav li:even').hover(function(){
                 $(this).find('.topshow').css({
                    'border-left':'1px solid #f8a89c',
@@ -32,7 +33,7 @@ $(function(){
             })
         },
         navShowEvent:function(){
-            //nav:
+            //top-nav导航show:
             $('.nav .navshow').hover(
                 function(){
                     $('.nav .navhide').eq($(this).index()-1).show();
@@ -50,6 +51,7 @@ $(function(){
                 }
             )
         },
+        
         goTop:function(){ 
             //gotop:回到顶部效果：
             $(window).scroll(function(e){
@@ -62,25 +64,49 @@ $(function(){
             $('.gotop').click(function(){
                 $('html ,body').animate({scrollTop: 0}, 10);
             })
-        }
+        },
+        mainImgHover:function(){
+            //index main图片划过opacity运动动画：
+            $('.mainImgHover').hover(function(){
+                $(this).find('a').find('img').animate({
+                    'opacity': '.7'
+                },50)
+                $(this).find('a').find('img').animate({
+                    'opacity': '1'
+                },50)
+            })
+        },
 
     }
+    //轮播：
     new HoverEvent();
-    var swiper = new Swiper('.swiper-container', {
+    var swiper1 = new Swiper('.swiper-container', {
         spaceBetween: 30,
         effect: 'fade',
+        loop: true,
         pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
+            el: '.swiper-pagination',
+            clickable: true,
         },
         autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
+            delay: 2500,
+            disableOnInteraction: false,
         },
         navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
-  });
+    });
+    var swiper2 = new Swiper('.swiper-container2', {
+        spaceBetween: 30,
+        effect: 'fade',
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
+    //懒加载：
+    $("img.lazy").lazyload({effect: "fadeIn"});
 
 })
