@@ -9,11 +9,12 @@ var livereload = require('gulp-livereload');
 var sourcemaps = require('gulp-sourcemaps');
 var watch = require('gulp-watch');
 var cleanCSS = require('gulp-clean-css');
-
-
+var babel = require('gulp-babel');
+var gulpCopy = require("gulp-copy")
 var uglifyConfig = [
     'static/js/jquery.min.js',
     'static/js/jquery.cookie.js',
+    'static/js/swiper.min.js',
 ]
 gulp.task('clean', function () {
     return gulp.src('app/css/*')
@@ -25,8 +26,8 @@ gulp.task('concat', function () {
     gulp.src(uglifyConfig)
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('static/js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('static/js'))
+        // .pipe(uglify())
+        // .pipe(gulp.dest('static/js'))
 
 })
 
@@ -54,7 +55,8 @@ gulp.task("sass",['clean'], function () {
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('app/css'))
+        .pipe(concat('style.css'))
+        .pipe(gulp.dest('dist/css'))
        
 })
 
@@ -81,11 +83,27 @@ gulp.task('webserver',['concatcss'], function () {
         }));
 });
 
+gulp.task('es6',()=>{
+    gulp.src('app/js/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(concat('all.js'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist/js'))
+})
+
+gulp.task('copy',  function() {
+    return gulp.src('./app/image/*').pipe(gulp.dest('./dist/image'));
+  });
+
 gulp.task('watch', function() { //这里的watch，是自定义的，携程live或者别的也行  
     livereload.listen();//这里需要注意！旧版使用var server = livereload();已经失效    
     gulp.watch('app/**/*.*', function(event) {  
         livereload.changed(event.path);
         gulp.watch('app/sass/*.scss',['sass','concatcss'])
+        gulp.watch('app/js/*.js',['es6'])
     }); 
     gulp.watch('static/**/*.*', function(event) {  
         livereload.changed(event.path);  
@@ -95,5 +113,5 @@ gulp.task('watch', function() { //这里的watch，是自定义的，携程live�
 
 
 
-gulp.task('dev', ['clean','sass', 'concat','autoprefixer','concatcss','webserver','watch']);
+gulp.task('dev', ['clean','copy','sass', 'concat','autoprefixer','es6','webserver','watch']);
 

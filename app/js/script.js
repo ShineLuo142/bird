@@ -1,5 +1,8 @@
+
 //top部分tab切换效果：
+
 $(function(){
+    
     function HoverEvent(){
         this.init();
     }
@@ -9,7 +12,7 @@ $(function(){
             this.navShowEvent();
             this.goTop();
         },
-        topNavEvent:function(){
+        topNavEvent:()=>{
             $('.topnav li:even').hover(function(){
                 $(this).find('.topshow').css({
                    'border-left':'1px solid #f8a89c',
@@ -61,9 +64,6 @@ $(function(){
         }
 
     }
-    
-
-    
     new HoverEvent();
     var swiper = new Swiper('.swiper-container', {
         spaceBetween: 30,
