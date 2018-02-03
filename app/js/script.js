@@ -3,6 +3,8 @@ $(function(){
     
     
     function HoverEvent(){
+        this.productTimer = null;
+        this.productIndex = 0;
         this.init();
     }
     HoverEvent.prototype = {
@@ -11,6 +13,7 @@ $(function(){
             this.navShowEvent();
             this.goTop();
             this.mainImgHover();
+            this.productHover();
         },
         
         topNavEvent:()=>{
@@ -76,6 +79,34 @@ $(function(){
                 },50)
             })
         },
+        productHover:function(){
+            let that = this;
+            clearInterval(this.productTimer);
+            this.productTimer = setInterval(()=>{
+                if(this.productIndex > 4) {
+                    this.productIndex = 0 ;
+                }
+                $(".gallery-thumbs li").eq(this.productIndex).addClass("active").siblings("li").removeClass("active");
+                $(".product-swiper-container li").eq(this.productIndex).addClass("active").siblings("li").removeClass("active")
+                this.productIndex += 1; 
+
+            },2000)
+            
+            $(".gallery-thumbs li").hover(function(){
+                clearInterval(that.productTimer);
+                let index= $(this).index();
+                $(this).addClass("active").siblings("li").removeClass("active");
+                $(".product-swiper-container li").eq(index).addClass("active").siblings("li").removeClass("active");
+                that.productIndex = index;
+                that.productTimer = setInterval(()=>{
+                    if(this.productIndex > 4) {
+                        this.productIndex = 0 ;
+                    }
+                    $(".product-swiper-container li").eq(that.productIndex).addClass("active").siblings("li").removeClass("active")
+                    that.productIndex += 1; 
+                },2000)
+            })
+        }
 
     }
     new HoverEvent();
@@ -115,19 +146,21 @@ $(function(){
         slidesPerView: 3,
         slidesPerColumn: 2,
       });
-      var galleryThumbs = new Swiper('.gallery-thumbs', {
-        spaceBetween: 10,
-        effect: 'fade',
-        loop: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        touchRatio: 0.2,
-        slideToClickedSlide: true,
-      });
-      galleryTop.controller.control = galleryThumbs;
-      galleryThumbs.controller.control = galleryTop;
+    //   var galleryThumbs = new Swiper('.gallery-thumbs', {
+    //     spaceBetween: 10,
+    //     effect: 'fade',
+    //     loop: true,
+    //     centeredSlides: true,
+    //     slidesPerView: 'auto',
+    //     touchRatio: 0.2,
+    //     slideToClickedSlide: true,
+    //   });
+    //   galleryTop.controller.control = galleryThumbs;
+    //   galleryThumbs.controller.control = galleryTop;
   
     //懒加载：
     $("img.lazy").lazyload({effect: "fadeIn"});
+
+
 
 })
