@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+.loginbg{
+	width: 100%;
+	height: 601px;
+	background: url(../image/loginbg.jpg);
+	.logindiv{
+		width: 1180px;
+		.loginbox{
+			width: 452px;
+			float: right;
+			height: 510px;
+			background-color: #fadeda;
+			margin-top: 90px;
+			.loginheader{
+				
+			}
+			.loginform{
+				width: 366px;
+				height: 380px;
+				background-color: #fcedea;
+				margin: 0 auto;
+			}
+		}
+	}
+}
