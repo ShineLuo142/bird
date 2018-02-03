@@ -139,6 +139,7 @@ $(function(){
         },
     });
     //mainproduct-banner：
+
     var galleryTop = new Swiper('.gallery-top', {
         spaceBetween: 10,
         effect: 'fade',
@@ -157,6 +158,7 @@ $(function(){
     //   });
     //   galleryTop.controller.control = galleryThumbs;
     //   galleryThumbs.controller.control = galleryTop;
+
   
     //懒加载：
     $("img.lazy").lazyload({effect: "fadeIn"});
