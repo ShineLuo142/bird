@@ -14,6 +14,8 @@ $(function(){
             this.goTop();
             this.mainImgHover();
             this.productHover();
+            this.loginrememberclick();
+            this.recommendLisHover();
         },
         
         topNavEvent:()=>{
@@ -68,6 +70,21 @@ $(function(){
                 $('html ,body').animate({scrollTop: 0}, 10);
             })
         },
+        //注册登录记住密码处切换：
+        loginrememberclick:function(){
+            $('.loginradio').click(function(){
+                $(this).toggleClass('selected');
+            })
+
+        },
+        //婚戒推荐 & 全球美钻hover:
+        recommendLisHover:function(){
+            $('.recommendlis').hover(function(){
+                $(this).animate({'margin-top':'-12'});
+            },function(){
+                $(this).animate({'margin-top':'0'});
+            })
+        },
         mainImgHover:function(){
             //index main图片划过opacity运动动画：
             $('.mainImgHover').hover(function(){
@@ -110,6 +127,10 @@ $(function(){
 
     }
     new HoverEvent();
+
+
+
+
     //轮播：
     //index 1 banner:
     var swiper1 = new Swiper('.swiper-container', {
@@ -147,22 +168,25 @@ $(function(){
         slidesPerView: 3,
         slidesPerColumn: 2,
       });
-    //   var galleryThumbs = new Swiper('.gallery-thumbs', {
-    //     spaceBetween: 10,
-    //     effect: 'fade',
-    //     loop: true,
-    //     centeredSlides: true,
-    //     slidesPerView: 'auto',
-    //     touchRatio: 0.2,
-    //     slideToClickedSlide: true,
-    //   });
-    //   galleryTop.controller.control = galleryThumbs;
-    //   galleryThumbs.controller.control = galleryTop;
 
+    //婚戒推荐 & 全球美钻banner：
+    var swiper3 = new Swiper('.swiper-container3', {
+        slidesPerView: 4,
+        spaceBetween: 45,
+        slidesPerGroup: 1,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
   
     //懒加载：
     $("img.lazy").lazyload({effect: "fadeIn"});
-
 
 
 })

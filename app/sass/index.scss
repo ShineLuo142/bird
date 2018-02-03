@@ -139,9 +139,72 @@
        
         }
     }
+    
+}
+.recomand-wrap{
+    position: relative;
     .recommend{
+        width: 1180px;
+        margin: 55px auto 0;
+        height:226px;
+        overflow: hidden;
+        h2{
+            font-size: 24px;
+            text-align: center;
+            font-weight: normal;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+        .recommendbanner{
+
+            ul .swiper-slide{
+                width: 240px !important;
+                height: 193px !important;
+                margin-left: 20px !important;
+                
+            }
+            .swiper-button-black{
+                width: 30px !important;
+                height: 30px !important;
+                z-index: 2 !important;
+                background-size: contain;
+            }
+            .swiper-button-prev{
+                left: 30px;
+            }
+            .swiper-button-next{
+                right: 30px;
+            }
+        }
         
     }
+}
+.shape-wrap{
+    background-color: #f5f5f5;
+    height: 177px;
+    margin-top: 55px;
+    .shape{
+        width: 1180px;
+        margin:0 auto;
+        height: 177px;
+        padding-top: 55px;
+        a{
+            display: inline-block;
+            line-height: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #b7b7b7;
+            padding: 0 5px;
+            i{
+                display: block;
+                background: url(../image/icon_shape.jpg) no-repeat;
+                height: 49px;
+                width: 104px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
 }
 
 

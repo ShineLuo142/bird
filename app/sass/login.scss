@@ -3,23 +3,129 @@
 .loginbg{
 	width: 100%;
 	height: 601px;
-	background: url(../image/loginbg.jpg);
+	background: url(../image/loginbg.jpg) no-repeat center;
 	.logindiv{
 		width: 1180px;
 		.loginbox{
 			width: 452px;
 			float: right;
 			height: 510px;
-			background-color: #fadeda;
-			margin-top: 90px;
+			margin-top: 80px;
 			.loginheader{
-				
+				width: 366px;
+				margin: 16px auto;
+				h3{
+					font-size: 20px;
+					height: 20px;
+					float: left;
+				}
+				a{
+					display: block;
+					float: right;
+				}
+
 			}
 			.loginform{
 				width: 366px;
 				height: 380px;
 				background-color: #fcedea;
 				margin: 0 auto;
+				padding-top: 26px;
+				.textype{
+					height: 34px;
+					display: block;
+					line-height: 34px;
+					padding-left: 16px;
+					width: 267px;
+					margin: 20px auto;
+					overflow: hidden;
+					border: 0;
+				}
+				#sub{
+					width: 283px;
+					text-align: center;
+					height: 34px;
+					line-height: 34px;
+					padding: 0;
+					color: #fff;
+					background: #ff8a81;
+					border: 0;
+					margin: 20px auto;
+					display: block;
+					&:hover{
+						opacity: 0.85;
+					}
+				}
+				.inputremenber{
+					width: 283px;
+					margin:20px auto;
+					.loginradio{
+						width: 13px;
+						height: 13px;
+						margin-right: 10px;
+						display: inline-block;
+						background-color: white;
+						float: left;
+						
+					}
+					.selected{
+						background: url(../image/login_phase.jpg)no-repeat right top;
+					}
+					span{
+						color: #666;
+						height: 13px;
+						line-height: 13px;
+						text-align: center;
+						float: left;
+					}
+					a{
+						float: right;
+					}
+				}
+				.loginfooter{
+					width: 250px;
+					margin: 40px auto;
+					.loginfooter-line{
+						height: 50px;
+						i{
+							display: inline-block;
+							height: 1px;
+							width: 58px;
+							background-color: white;
+							margin: 2px 3px;
+						}
+						span{
+							display: inline-block;
+							color: #9a9494;
+							letter-spacing:2px;
+						}
+					}
+					.loginfooter-img{
+						a{
+							display: inline-block;
+							width: 46px;
+							height: 46px;
+							background:url(../image/qq-btn.jpg) no-repeat right top;
+							margin: 0 6px;
+							opacity: .7;
+							&:hover{
+								opacity: 1;
+							}
+						}
+						a:nth-child(2){
+							background:url(../image/weixin-btn.jpg) no-repeat right top;
+						}
+						a:nth-child(3){
+							background:url(../image/sina-btn.jpg) no-repeat right top;
+						}
+						a:nth-child(4){
+							background:url(../image/zhifubao-btn.jpg) no-repeat right top;
+						}
+					}
+				
+				}
+
+
 			}
 		}
 	}
