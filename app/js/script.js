@@ -78,8 +78,9 @@ $(function(){
         },
 
     }
-    //轮播：
     new HoverEvent();
+    //轮播：
+    //index 1 banner:
     var swiper1 = new Swiper('.swiper-container', {
         spaceBetween: 30,
         effect: 'fade',
@@ -106,6 +107,26 @@ $(function(){
             disableOnInteraction: false,
         },
     });
+    //mainproduct-banner：
+    var galleryTop = new Swiper('.gallery-top', {
+        spaceBetween: 10,
+        effect: 'fade',
+        loop: true,
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+      });
+      var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        effect: 'fade',
+        loop: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true,
+      });
+      galleryTop.controller.control = galleryThumbs;
+      galleryThumbs.controller.control = galleryTop;
+  
     //懒加载：
     $("img.lazy").lazyload({effect: "fadeIn"});
 

@@ -89,6 +89,7 @@
     .product{
         width: 1180px;
         margin: 0 auto;
+        height: 826px;
         h2{
             color: #000;
             font-size: 24px;
@@ -97,13 +98,36 @@
             line-height: 24px;
             margin: 20px 0;
         }
-        .product-nav{
+        .product-content{
+            .product-nav{
             background: #feb8ae;
             text-align: center;
             margin-top: 45px;
             height: 37px;
             width: 1180px;
+            li{
+                width: 20% !important;
+                transform:none !important;
+                
+            }
+            .p-b1{
+                width: 700px !important;
+                height: 442px !important;
+            }
+            .p-b2{
+                width: 700px !important;
+                height: 241px !important;
+            }
+            .p-b3{
+                width: 464px !important;
+                height: 696px !important;
+            } 
         }
+       
+        }
+    }
+    .recommend{
+        
     }
 }
 
