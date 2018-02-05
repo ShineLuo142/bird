@@ -268,6 +268,108 @@
         position: relative;
 
     }
+    .experience-centerright{
+        width: 480px;
+        height: 530px;
+        background-color: #fdeaea;
+        .centerdata{
+            text-align: center;
+            h6{
+                width: 100%;
+                font-size: 28px;
+                margin-top: 106px;
+                text-align: center;
+                font-weight: 400;
+            }
+            i{
+                display: block;
+                width: 59px;
+                border-top: 1px solid #000;
+                margin: 38px auto 22px;
+            }
+            
+        }
+        .centerinput{
+            width: 300px;
+            height: 38px;
+            margin: 30px auto;
+            position: relative;
+           .txt{
+            display: block;
+            background-color: white;
+            border: 0;
+            width: 300px;
+            height: 38px;
+            line-height: 36px;
+            color: #b7b7b7;
+            padding-left: 10px;
+            font-family: Arial, "宋体";
+            }
+            a{
+             display: block;
+             position: absolute;
+             height: 38px;
+             width: 50px;
+             line-height: 38px;
+             top:0;
+             right: 0;
+             text-align: center;
+             display: none;
+            } 
+        }
+        
+         .sub{
+            width: 142px;
+            height: 32px;
+            line-height: 32px;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            background: #f6827a;
+            color: #fff;
+            border: 0;
+            font-family: Arial, "宋体";
+         }
+    }
+
+}
+.news{
+    margin: 50px 0;
+    .newsbox{
+        width: 660px;
+        .line{
+            height: 1px;
+            background-color: black;
+            margin-top: 50px;
+        }
+        ul{
+            width: 310px;
+            margin-left: 20px;
+            h4{
+                font-size: 12px;
+                color: #000;
+                padding: 27px 0 19px;
+                font-weight: 400;
+            }
+            a{
+                color: #333;
+                font-size: 12px;
+                line-height: 28px;
+                &:hover{
+                    color: #ff8a81;
+                }
+            }
+            li:last-child{
+                margin: 15px 0 -12px 0;
+            }
+        }
+    }
+    .newsbanner{
+        margin-top: 50px;
+        width: 480px;
+        height: 320px;
+        position: relative;
+    }
 }
 
 

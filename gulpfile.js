@@ -11,6 +11,8 @@ var watch = require('gulp-watch');
 var cleanCSS = require('gulp-clean-css');
 var babel = require('gulp-babel');
 var gulpCopy = require("gulp-copy")
+var plumber = require('gulp-plumber');
+var notify = require('gulp-notify')
 var uglifyConfig = [
     'static/js/jquery.min.js',
     'static/js/jquery.cookie.js',
@@ -58,6 +60,7 @@ gulp.task("sass",['clean'], function () {
         .pipe(sourcemaps.write())
         .pipe(concat('style.css'))
         .pipe(gulp.dest('app/css'))
+        .pipe(livereload());
        
 })
 
@@ -86,6 +89,7 @@ gulp.task('webserver',['concatcss'], function () {
 
 gulp.task('es6',()=>{
     gulp.src('app/js/*.js')
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['es2015']
@@ -93,6 +97,7 @@ gulp.task('es6',()=>{
         .pipe(concat('all.js'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/js'))
+        .pipe(livereload())
 })
 
 gulp.task('copy',  function() {
