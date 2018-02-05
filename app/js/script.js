@@ -16,6 +16,7 @@ $(function(){
             this.productHover();
             this.loginrememberclick();
             this.recommendLisHover();
+            this.shapeHover();
         },
         
         topNavEvent:()=>{
@@ -75,7 +76,6 @@ $(function(){
             $('.loginradio').click(function(){
                 $(this).toggleClass('selected');
             })
-
         },
         //婚戒推荐 & 全球美钻hover:
         recommendLisHover:function(){
@@ -84,6 +84,14 @@ $(function(){
             },function(){
                 $(this).animate({'margin-top':'0'});
             })
+        },
+        //各种形状hover：
+        shapeHover:function(){
+            $('.shape a').hover(function(){
+                $(this).find('i').animate({'background-positionY':-49})           
+            },function(){
+                $(this).find('i').animate({'background-positionY':0})
+            })           
         },
         mainImgHover:function(){
             //index main图片划过opacity运动动画：
@@ -184,6 +192,28 @@ $(function(){
           prevEl: '.swiper-button-prev',
         },
       });
+      //体验中心experence-center-banner:     
+    var swiper4 = new Swiper('.swiper-container4', {
+        spaceBetween: 30,
+        effect: 'fade',
+        loop:true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+      });
+    //设置hover停止轮播：
+    // $('.swiper-container4').mouseover(function(){
+    //     swiper4.stopAutoplay();
+    // })
+    // $('.swiper-container4').mouseout(function(){
+    //     swiper4.startAutoplay();
+    // })
+    
   
     //懒加载：
     $("img.lazy").lazyload({effect: "fadeIn"});
