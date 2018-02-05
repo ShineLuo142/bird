@@ -57,7 +57,7 @@ gulp.task("sass",['clean'], function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write())
         .pipe(concat('style.css'))
-        .pipe(gulp.dest('dist/css'))
+        .pipe(gulp.dest('app/css'))
        
 })
 
@@ -96,23 +96,29 @@ gulp.task('es6',()=>{
 })
 
 gulp.task('copy',  function() {
-    return gulp.src('./app/image/*').pipe(gulp.dest('./dist/image'));
+    gulp.src('./app/image/*')
+        .pipe(gulp.dest('./dist/image'))
   });
 
 gulp.task('watch', function() { //这里的watch，是自定义的，携程live或者别的也行  
     livereload.listen();//这里需要注意！旧版使用var server = livereload();已经失效    
     gulp.watch('app/**/*.*', function(event) {  
         gulp.watch('app/sass/*.scss',['sass'])
+      
        // gulp.watch('app/js/*.js',['es6'])
         livereload.changed(event.path);
+        
+        //console.log(event)
     }); 
     gulp.watch('static/**/*.*', function(event) {  
         livereload.changed(event.path);  
     }); 
+   
     gulp.watch('app/js/*.js',['es6'])
+    
 });  
 
 
 
-gulp.task('dev', ['clean','copy','sass', 'concat','autoprefixer','es6','webserver','watch']);
+gulp.task('dev', ['clean','sass', 'concat','autoprefixer','es6','webserver','watch']);
 
