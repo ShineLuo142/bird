@@ -14,6 +14,7 @@ var notify = require('gulp-notify')
 var cssmin = require('gulp-cssmin');
 var htmlreplace = require('gulp-html-replace');
 var order = require("gulp-order");
+
 var uglifyConfig = [
     'static/js/jquery.min.js',
     'static/js/jquery.cookie.js',
