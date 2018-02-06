@@ -165,24 +165,7 @@ $(function(){
 
 
     //轮播：
-    //index 1 banner:
-    var swiper1 = new Swiper('.swiper-container', {
-        spaceBetween: 30,
-        effect: 'fade',
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+   
     var swiper2 = new Swiper('.swiper-container2', {
         spaceBetween: 30,
         effect: 'fade',
@@ -511,16 +494,37 @@ var centerData=[{
         $('.centerdata').html(str);
     })
 
-
-
-
-
-
-
     //懒加载：
     $("img.lazy").lazyload({effect: "fadeIn"});
 
-
+    $.get("./json/bigBanner.json", function(result){
+        // result = [...result]
+        let str = '';  
+        for(let i = 0 ; i < result.length; i++ ){
+            str += `
+            <div class="swiper-slide" style="background-image:url(${result[i].imgUrl})"></div>
+            `
+        }
+        $(".swiper-wrapper.bigBanner").html(str)
+         //index 1 banner:
+        var swiper1 = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            effect: 'fade',
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    });
 
 
 

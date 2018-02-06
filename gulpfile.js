@@ -8,11 +8,12 @@ var webserver = require('gulp-webserver');
 var livereload = require('gulp-livereload');
 var sourcemaps = require('gulp-sourcemaps');
 var watch = require('gulp-watch');
-var cleanCSS = require('gulp-clean-css');
 var babel = require('gulp-babel');
-var gulpCopy = require("gulp-copy")
 var plumber = require('gulp-plumber');
 var notify = require('gulp-notify')
+var cssmin = require('gulp-cssmin');
+var htmlreplace = require('gulp-html-replace');
+var order = require("gulp-order");
 var uglifyConfig = [
     'static/js/jquery.min.js',
     'static/js/jquery.cookie.js',
@@ -24,9 +25,25 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
+gulp.task('cleanDist',()=>{
+    return gulp.src('dist/*')
+    .pipe(clean());
+})
+
 
 gulp.task('concat', function () {
-    gulp.src(uglifyConfig)
+    gulp.src([
+            'static/js/jquery.min.js',
+            'static/js/swiper.min.js',
+            'static/js/jquery.lazyload.min.js',
+            'static/js/jquery.cookie.js',
+        ])
+        .pipe(order([
+            'static/js/jquery.min.js',
+            'static/js/swiper.min.js',
+            'static/js/jquery.lazyload.min.js',
+            'static/js/jquery.cookie.js',
+        ],{ base: './' }))
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('static/js'))
         // .pipe(uglify())
@@ -34,12 +51,14 @@ gulp.task('concat', function () {
 
 })
 
-gulp.task('concatjs', function () {
+gulp.task('concatjs',['cleanDist'] ,function () {
     gulp.src('./app/js/*.js')
-        .pipe(concat('script.js'))
-        .pipe(gulp.dest('static/js'))
-        // .pipe(uglify())
-        // .pipe(gulp.dest('static/js'))
+        .pipe(babel({
+            presets: ['es2015']
+        }))
+        .pipe(concat('all.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/js'))
 
 })
 
@@ -100,10 +119,29 @@ gulp.task('es6',()=>{
         .pipe(livereload())
 })
 
-gulp.task('copy',  function() {
-    gulp.src('./app/image/*')
-        .pipe(gulp.dest('./dist/image'))
-  });
+gulp.task('copy',['cleanDist'],function() {
+    return gulp.src(['./app/*.html','./app/image/*','./app/json/*'],{ base: 'app/'})
+        .pipe(gulp.dest('./dist/'))
+       
+});
+
+gulp.task('minifycss',()=>{
+    return gulp.src('app/sass/*.scss')
+        .pipe(sass())
+        .pipe(concat('style.min.css'))
+        .pipe(cssmin())   //执行压缩
+        .pipe(gulp.dest('dist/css/'));   //输出文件夹
+})
+
+gulp.task('htmlreplace',['copy'],()=>{
+    gulp.src('./app/*.html')
+        .pipe(htmlreplace({
+            'js': 'js/all.min.js',
+            'css':'css/style.min.css'
+        }))
+        .pipe(gulp.dest('dist/'));
+})
+
 
 gulp.task('watch', function() { //这里的watch，是自定义的，携程live或者别的也行  
     livereload.listen();//这里需要注意！旧版使用var server = livereload();已经失效    
@@ -126,4 +164,7 @@ gulp.task('watch', function() { //这里的watch，是自定义的，携程live�
 
 
 gulp.task('dev', ['clean','sass', 'concat','autoprefixer','es6','webserver','watch']);
+
+gulp.task('build',['cleanDist','concat','copy','minifycss','htmlreplace','concatjs'])
+
 
