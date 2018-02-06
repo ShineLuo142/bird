@@ -144,45 +144,66 @@ $(function(){
     }
     new HoverEvent();
 
+//登录注册：
     function LoginTest(){
         this.init();
     }
     LoginTest.prototype ={
         init:function(){
-            this.telTest();
+            this.loginShowEvent();
+            this.registerShowEvent();
+            this.closeLoginbgEvent();
 
-
+           
+            // this.telTest();
+            // passworsdTest();
+        },
+        loginShowEvent:function(){
+            $('#showlogin').click(function(){
+                $('.loginbg').show();
+                $('.loginbox').show().siblings().hide();            
+            })
+        },
+        registerShowEvent:function(){
+            $('#showregister').click(function(){
+                $('.loginbg').show();
+                $('.registerbox').show().siblings().hide();
+           })
+        },
+        closeLoginbgEvent:function(){
+            $('.closeloginbg').click(function(){
+                $('.loginbg').hide();
+            })
+        },
+        //拖拽：
+        loginDrag:function(){            
+                $( "#login" ).dialog(); 			           
+        },
+        registerDrag:function(){    
+                $( "#register" ).dialog(); 
+    
         },
         telTest:function(){
-            
+            var reg=/^[0-9]{11}$/
 
         },
+        // passworsdTest:function(){
+
+        // },
+
+
 
     }
+    new LoginTest();
+
+
 
 
 
 
 
     //轮播：
-    //index 1 banner:
-    var swiper1 = new Swiper('.swiper-container', {
-        spaceBetween: 30,
-        effect: 'fade',
-        loop: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+    //index  banner:
     var swiper2 = new Swiper('.swiper-container2', {
         spaceBetween: 30,
         effect: 'fade',
@@ -244,13 +265,7 @@ $(function(){
             disableOnInteraction: false,
         },
       });
-    //设置hover停止轮播：
-    // $('.swiper-container4').mouseover(function(){
-    //     swiper4.stopAutoplay();
-    // })
-    // $('.swiper-container4').mouseout(function(){
-    //     swiper4.startAutoplay();
-    // })
+
     
   
 
@@ -520,6 +535,47 @@ var centerData=[{
     //懒加载：
     $("img.lazy").lazyload({effect: "fadeIn"});
 
+    //登录框拖拽:  
+    $('.drag').each(function(index){
+        $(this).myDrag({
+            randomPosition:true,
+            direction:'all',
+            handler:'.handler',
+        });
+    });
+
+        
+      
+
+
+    //banner 1 ajax请求：
+    $.get("./json/bigBanner.json", function(result){
+        let str = '';
+        for(let i=0;i<result.length;i++){
+        str += `
+        <div class="swiper-slide" style="background-image:url(${i.imgUrl})"></div>
+        `
+        }
+        $(".swiper-wrapper.bigBanner").html(str)
+        //index 1 banner:
+        var swiper1 = new Swiper('.swiper-container', {
+        spaceBetween: 30,
+        effect: 'fade',
+        loop: true,
+        pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        },
+        autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        },
+        navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+        },
+        });
+        });
 
 
 

@@ -12,14 +12,14 @@ $f8e3df:#f8e3df;
 
         .welcome{
             float: left;
-            a{
-                width: auto;
+            span{
                 height: 34px;
                 line-height: 34px;
                 display: block;
                 float: left;
                 color: #333;
                 margin: 0 10px 0 10px;
+                cursor: pointer;
             }
  
         }
@@ -112,7 +112,6 @@ $f8e3df:#f8e3df;
             margin-top: 31px;
             .searchtxt{
                 width: 146px;
-                height: 32px;
                 color: #999;
                 line-height: 16px;
                 padding: 7px 0 7px 10px;
@@ -399,6 +398,9 @@ $f8e3df:#f8e3df;
                     color: #999999;
                     display: block;
                     text-align: left;
+                    &:hover{
+                        color: #ff8a81;
+                    }
                 }
                 li:first-child a{
                     width: 96px;

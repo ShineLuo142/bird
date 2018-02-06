@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+.product-back{
+	width: 1180px;
+	margin: 0 auto;
+	height: 45px;
+	line-height: 45px;
+	color: #666;
+	a{
+		padding: 0 8px;
+	}
+}
+.product-top{
+	width: 1180px;
+	height: 79px;
+	margin: 0 auto;
+	margin-bottom: 23px;
+	background:url('../image/productbg01.jpg') center no-repeat;
+	p{
+		font-size: 18px;
+		color: #000;
+		padding: 26px 0 0 20px;
+		text-align: left;
+	}
+}

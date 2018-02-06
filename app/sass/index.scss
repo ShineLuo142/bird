@@ -1,3 +1,277 @@
+.loginbg{
+	width: 100%;
+	height: 601px;
+    background: url(../image/loginbg.jpg) no-repeat center;
+    display: none;
+	.logindiv{
+        width: 1180px;
+        margin: 0 auto;
+        height: 601px;
+        position: relative;
+		.loginbox{
+			width: 370px;
+			height: 460px;
+            position: absolute;
+            top:30% ;
+            right: 0;
+            display: none;
+			.loginheader{
+                width: 366px;
+                margin: 0 auto;
+				h3{
+					font-size: 20px;
+					height: 50px;
+                    line-height: 50px;
+					float: left;
+					font-weight: 400;
+				}
+				span{
+					display: block;
+                    float: right;
+                    width: 30px;
+                    height: 50px;
+                    line-height: 50px;
+                    cursor: pointer;
+				}
+
+			}
+			.loginform{
+				width: 366px;
+				height: 380px;
+				background-color: #fcedea;
+				margin: 0 auto;
+				padding-top: 26px;
+				.textype{
+					height: 34px;
+					display: block;
+					line-height: 34px;
+					padding-left: 16px;
+					width: 267px;
+					margin: 20px auto;
+					overflow: hidden;
+					border: 0;
+				}
+				#sub{
+					width: 283px;
+					text-align: center;
+					height: 34px;
+					line-height: 34px;
+					padding: 0;
+					color: #fff;
+					background: #ff8a81;
+					border: 0;
+					margin: 20px auto;
+					display: block;
+					&:hover{
+						opacity: 0.85;
+					}
+				}
+				.inputremenber{
+					width: 283px;
+					margin:20px auto;
+					.loginradio{
+						width: 13px;
+						height: 13px;
+						margin-right: 10px;
+						display: inline-block;
+						background-color: white;
+						float: left;
+						
+					}
+					.selected{
+						background: url(../image/login_phase.jpg)no-repeat right top;
+					}
+					span{
+						color: #666;
+						height: 13px;
+						line-height: 13px;
+						text-align: center;
+						float: left;
+					}
+					a{
+						float: right;
+					}
+				}
+				.loginfooter{
+					width: 250px;
+					margin: 40px auto;
+					.loginfooter-line{
+						height: 50px;
+						i{
+							display: inline-block;
+							height: 1px;
+							width: 58px;
+							background-color: white;
+							margin: 2px 3px;
+						}
+						span{
+							display: inline-block;
+							color: #9a9494;
+							letter-spacing:2px;
+						}
+					}
+					.loginfooter-img{
+						a{
+							display: inline-block;
+							width: 46px;
+							height: 46px;
+							background:url(../image/qq-btn.jpg) no-repeat right top;
+							margin: 0 6px;
+							opacity: .7;
+							&:hover{
+								opacity: 1;
+							}
+						}
+						a:nth-child(2){
+							background:url(../image/weixin-btn.jpg) no-repeat right top;
+						}
+						a:nth-child(3){
+							background:url(../image/sina-btn.jpg) no-repeat right top;
+						}
+						a:nth-child(4){
+							background:url(../image/zhifubao-btn.jpg) no-repeat right top;
+						}
+					}
+				
+				}
+
+
+			}
+		}
+		.registerbox{
+			width: 370px;			
+            height: 460px;
+            position: absolute;
+            top:30% ;
+            right: 0 ;
+            display: none;
+			.registerheader{
+                width: 370px;
+                margin: 0 auto;
+				h3{
+					font-size: 20px;
+					height: 50px;
+                    line-height: 50px;
+					float: left;
+					font-weight: 400;
+				}
+				.h3right{
+					float: right;
+					span{
+                        float: left;
+                        width: 30px;
+                        height: 50px;
+                        line-height: 50px;
+                        cursor: pointer;
+					}
+
+				}
+				
+
+			}
+			.registerform{
+				width: 366px;
+				height: 362px;
+				background-color: #fcedea;
+				margin: 0 auto;
+				padding-top: 45px;
+				.textype{
+					height: 34px;
+					display: block;
+					line-height: 34px;
+					padding-left: 16px;
+					width: 267px;
+					margin: 0px auto;
+					overflow: hidden;
+					border: 0;
+				}
+				.buttomdiv{
+					height: 34px;
+					width: 267px;
+					margin: 0px auto;
+					.identifying-code{
+						width: 122px;
+						color: #b0b0b0;
+						background: white;
+						display: inline-block;
+						padding-left: 16px;
+						border: none;
+						height: 34px;
+						float: left;
+					}
+					.identifyingbutton{
+						background: #ff8a81;
+						color: #fff;
+						margin-left: 12px;
+						width: 133px;    
+						height: 34px;
+						display: inline-block;
+						border: none;
+						vertical-align: top;
+						cursor: pointer;
+						text-align: center;
+						float: left;
+						&:hover{
+							opacity: 0.85;
+						}
+					}
+				}
+				#sub{
+					width: 283px;
+					text-align: center;
+					height: 34px;
+					line-height: 34px;
+					padding: 0;
+					color: #fff;
+					background: #ff8a81;
+					border: 0;
+					margin: 0px auto;
+					display: block;
+					&:hover{
+						opacity: 0.85;
+					}
+				}
+				span{
+					height: 25px;
+					display: inline-block;
+				}
+				.inputremenber{
+					width: 283px;
+					margin:0px auto 20px;
+					.loginradio{
+						width: 13px;
+						height: 13px;
+						margin-right: 10px;
+						display: inline-block;
+						background-color: white;
+						float: left;
+						
+					}
+					.selected{
+						background: url(../image/login_phase.jpg)no-repeat right top;
+					}
+					span{
+						color: #505050;
+						height: 13px;
+						line-height: 13px;
+						text-align: center;
+						a{
+							text-decoration: underline;
+						}
+					}
+				}
+		}
+
+	}
+		
+	}
+}
+
+
+
+
+
+
 /*banner*/
 .banner{
     width: 100%;

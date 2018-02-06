@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./../static/css/swiper.min.css">
+    <script src="./../static/js/vendor.js"></script>
+    <script src="./../static/js/jquery.olazyload.min.js"></script>
+    <script src="./../static/js/jquery.swiper.min.js"></script>
+    <script src="./../static/js/jquery.tdrag.js"></script>
+    <title>商品列表</title>
+</head>
+<body>
+    <div class="top-wrap"></div>
+
+    <div class="search-wrap">
+        <div class="search">
+            <img src="./image/logo.png" alt="小鸟钻石">
+            <div class="searchform">
+                <input type="text" placeholder="戒托" class="searchtxt">
+                <input type="submit" value="　" class="searchsub">
+                <a href="#">来店预约</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="nav-wrap">
+        <div class="nav">
+            <div class="navleft">
+                <ul>
+                    <li><a href="#" class="navindex">首页</a></li>
+                    <li class="navshow"><a href="#">钻石</a></li>
+                    <li class="navshow"><a href="#">婚戒</a></li>
+                    <li class="navshow"><a href="#">对戒</a></li>
+                    <li class="navshow"><a href="#">配饰</a></li>
+                    <li class="navshow"><a href="#">定制</a></li>
+                    <li class="navshow"><a href="#">体验中心</a></li>
+
+                </ul>
+            </div>
+            <div class="navhide navdiamond">
+                <ul>
+                    <li>
+                        <h2>钻石</h2>
+                        <a href="#">钻石探索全部钻石</a>
+                    </li>
+                    <li>
+                        <a href="#">30分裸钻</a>
+                    </li>
+                    <li>
+                        <a href="#">50分裸钻</a>
+                    </li>
+                    <li>
+                        <a href="#">70分裸钻</a>
+                    </li>
+                    <li>
+                        <a href="#">克拉钻</a>
+                    </li>
+                    <li>
+                        <a href="#">海淘钻石 立省15%</a>
+                    </li>
+                    <li>
+                        <a href="#">北极光钻石</a>
+                    </li>
+                    <li>
+                        <a href="#">FireCushion钻石</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">圆形</a>
+                    </li>
+                    <li>
+                        <a href="#">公主方</a>
+                    </li>
+                    <li>
+                        <a href="#">祖母绿</a>
+                    </li>
+                    <li>
+                        <a href="#">橄榄形</a>
+                    </li>
+                    <li>
+                        <a href="#">椭圆形</a>
+                    </li>
+                    <li>
+                        <a href="#">梨形</a>
+                    </li>
+                    <li>
+                        <a href="#">心形</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">定制一款钻戒</a>
+                    </li>
+                    <li>
+                        <a href="#">定制一款吊坠</a>
+                    </li>
+                    <li>
+                        <a href="#">钻石4C知识</a>
+                    </li>
+                    <li>
+                        <a href="#">钻石其他参数如何查看</a>
+                    </li>
+                    <li>
+                        <a href="#">钻石证书知识</a>
+                    </li>
+                    <li>
+                        <a href="#">甄选特惠裸钻专区</a>
+                    </li>
+                </ul>
+                <div class="hideimg">
+                    <a href="#">
+                        <img src="image/nav1.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="navhide navmarry">
+                <ul>
+                    <li>
+                        <h2>婚戒</h2>
+                        <a href="#">婚戒探索全部婚戒</a>
+                    </li>
+                    <li>
+                        <a href="#">简约独钻</a>
+                    </li>
+                    <li>
+                        <a href="#">奢华群镶</a>
+                    </li>
+                    <li>
+                        <a href="#">克拉钻戒</a>
+                    </li>
+                    <li>
+                        <a href="#">大气男戒</a>
+                    </li>
+                    <li>
+                        <a href="#">纪念戒/花戒</a>
+                    </li>
+                    <li>
+                        <a href="#">戒托款式</a>
+                    </li>
+                    <li>
+                        <a href="#">人气热销</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">TRIMARK系列</a>
+                    </li>
+                    <li>
+                        <a href="#">北极光系列</a>
+                    </li>
+                    <li>
+                        <a href="#">LADY NEW YORK</a>
+                    </li>
+                    <li>
+                        <a href="#">心心相印系列</a>
+                    </li>
+                    <li>
+                        <a href="#">钟情蕾丝系列</a>
+                    </li>
+                    <li>
+                        <a href="#">宠爱系列</a>
+                    </li>
+                    <li>
+                        <a href="#">玲珑系列</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">幸福三指环</a>
+                    </li>
+                    <li>
+                        <a href="#">如何测量手寸</a>
+                    </li>
+                    <li>
+                        <a href="#">如何挑选适合的戒指款式</a>
+                    </li>
+                    <li>
+                        <a href="#">钻石其他参数如何查看</a>
+                    </li>
+                    <li>
+                        <a href="#">如何选购戒托材质</a>
+                    </li>
+                    <li>
+                        <a href="#">匠心工艺</a>
+                    </li>
+                </ul>
+                <div class="hideimg">
+                    <a href="#">
+                        <img src="image/nav2.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="navhide navcouple">
+                <ul>
+                    <li>
+                        <h2>对戒</h2>
+                        <a href="#">对戒探索全部对戒</a>
+                    </li>
+                    <li>
+                        <a href="#">18K金对戒</a>
+                    </li>
+                    <li>
+                        <a href="#">铂金对戒</a>
+                    </li>
+                    <li>
+                        <a href="#">男款对戒</a>
+                    </li>
+                    <li>
+                        <a href="#">女款对戒</a>
+                    </li>
+                    <li>
+                        <a href="#">热销款式</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">两人一世戒系列</a>
+                    </li>
+                    <li>
+                        <a href="#">YOU&ME系列</a>
+                    </li>
+                    <li>
+                        <a href="#">皇冠系列</a>
+                    </li>
+                    <li>
+                        <a href="#">心声系列</a>
+                    </li>
+                    
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">对戒的戴法和意义</a>
+                    </li>
+                    <li>
+                        <a href="#">对戒刻字内容</a>
+                    </li>
+                    
+                </ul>
+                <div class="hideimg">
+                    <a href="#">
+                        <img src="image/nav3.jpg" alt="">
+                    </a>
+                </div>
+            
+            </div>
+            <div class="navhide navornament">
+                <ul>
+                    <li>
+                        <h2>配饰</h2>
+                        <a href="#">配饰探索全部配饰</a>
+                    </li>
+                    <li>
+                        <a href="#">挂坠</a>
+                    </li>
+                    <li>
+                        <a href="#">项链坠</a>
+                    </li>
+                    <li>
+                        <a href="#">耳钉</a>
+                    </li>
+                    <li>
+                        <a href="#">手链</a>
+                    </li>
+                    <li>
+                        <a href="#">手镯</a>
+                    </li>
+                    <li>
+                        <a href="#">项链</a>
+                    </li>
+                    <li>
+                        <a href="#">人气TOP</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">珍珠系列</a>
+                    </li>
+                    <li>
+                        <a href="#">闪耀芭比系列</a>
+                    </li>
+                    <li>
+                        <a href="#">BLINK系列</a>
+                    </li>
+                    <li>
+                        <a href="#">钟情蕾丝系列</a>
+                    </li>
+                    <li>
+                        <a href="#">纪念戒系列</a>
+                    </li>
+                    <li>
+                        <a href="#">醉玲珑系列</a>
+                    </li>
+                    <li>
+                        <a href="#">微光系列</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">18k金的保养</a>
+                    </li>
+                    <li>
+                        <a href="#">铂金的保养</a>
+                    </li>
+                    <li>
+                        <a href="#">如何选购项链</a>
+                    </li>
+                    <li>
+                        <a href="#">根据脸型来挑选耳环</a>
+                    </li>
+                    <li>
+                        <a href="#">手链的佩戴方法</a>
+                    </li>
+                </ul>
+                <div class="hideimg">
+                    <a href="#">
+                        <img src="image/nav4.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="navhide navdesign">
+                <ul>
+                    <li>
+                        <h2>定制</h2>
+                        <a href="#">定制探索全部定制</a>
+                    </li>
+                    <li>
+                        <a href="#">从裸钻开始定制</a>
+                    </li>
+                    <li>
+                        <a href="#">从戒托开始定制</a>
+                    </li>
+                    <li>
+                        <a href="#">从吊坠托开始定制</a>
+                    </li>
+                    <li>
+                        <a href="#">私人定制服务</a>
+                    </li>
+                    
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">经典直臂款戒托</a>
+                    </li>
+                    <li>
+                        <a href="#">简约扭臂款戒托</a>
+                    </li>
+                    <li>
+                        <a href="#">异型钻款戒托</a>
+                    </li>
+                    <li>
+                        <a href="#">北极光款戒托</a>
+                    </li>
+                    <li>
+                        <a href="#">火玫瑰款戒托</a>
+                    </li>
+                    
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">钻石4C</a>
+                    </li>
+                    <li>
+                        <a href="#">戒托款式</a>
+                    </li>
+                    <li>
+                        <a href="#">戒托材质</a>
+                    </li>
+                    <li>
+                        <a href="#">手寸测量</a>
+                    </li>
+                </ul>
+                <div class="hideimg">
+                    <a href="#">
+                        <img src="image/nav5.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="navhide navexperience">
+                <ul>
+                    <li>
+                        <h2>体验中心</h2>
+                        <a href="#">探索全部体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">上海体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">北京体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">广州体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">杭州体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">成都体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">宿迁体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">南昌体验中心</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">南京体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">合肥体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">天津体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">宁波体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">盐城体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">常州体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">烟台体验中心</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#">苏州体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">武汉体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">重庆体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">西安体验中心</a>
+                    </li>
+                    <li>
+                        <a href="#">郑州体验中心</a>
+                    </li>
+                    <li>
+                            <a href="#">济宁体验中心</a>
+                        </li>
+                    <li>
+                        <a href="#">查看全部</a>
+                    </li>
+                </ul>
+                <div class="hideimg">
+                    <a href="#">
+                        <img src="image/nav6.jpg" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <div class="navright">
+                <ul>
+                    <li><a href="#">商务加盟</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">鸟巢论坛</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-wrap">
+        <div class="main clearfix">
+            <div class="main-top">
+                <a href="#">首页  </a> <span>> 关键词<span class="searchword">钻石</span>搜索结果<span></span>
+                <img src="image/listheader1.jpg" alt="">
+            </div>
+            <div class="main-nav">
+                <ul>                   
+                    <li>
+                        <h5>钻石</h5>
+                        <ol>
+                            <li><a href="#">GIA钻石</a></li>
+                            <li><a href="#">30分钻石</a></li>
+                            <li><a href="#">50分钻石</a></li>
+                            <li><a href="#">北极光钻石</a></li>   
+                        </ol>
+                    </li>
+                    <li>
+                        <h5>钻戒</h5>
+                        <ol>
+                            <li><a href="#">铂金钻戒</a></li>
+                            <li><a href="#">30分钻戒</a></li>
+                            <li><a href="#">50分钻戒</a></li>
+                            <li><a href="#">70分钻戒</a></li>
+                            <li><a href="#">克拉钻戒</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h5>对戒</h5>
+                        <ol>
+                            <li><a href="#">铂金对戒</a></li>
+                            <li><a href="#">18K金对戒</a></li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h5>配饰</h5>
+                        <ol>
+                            <li><a href="#">吊坠</a></li>
+                            <li><a href="#">耳钉</a></li>
+                            <li><a href="#">套链</a></li>
+                            <li><a href="#">项链</a></li>
+                            <li><a href="#">手链</a></li>                              
+                        </ol>
+                    </li>   
+                </ul>
+
+            </div>
+            <div class="main-list">
+                <div class="main-list-top">
+                    <span class="fl"><strong class="searchword">钻石</strong> 搜索结果 你可根据以下条件进行筛选</span>
+                    <span class="fr">共<strong>868</strong>件</span>
+                </div>
+                <div class="main-list-dl">
+                    <ul>
+                        <li>
+                            <span class="spanleft">分    类</span>
+                            <span class="spanright">
+                                <a href="#">不限</a>
+                                <a href="#">钻戒</a>
+                                <a href="#"> 对戒</a>
+                                <a href="#">配饰</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="spanleft">价    格</span>
+                            <span class="spanright">
+                                <a href="#">不限</a>
+                                <a href="#">0-3000</a>
+                                <a href="#"> 3000-6000</a>
+                                <a href="#">6000-10000</a>
+                                <a href="#">10000-20000</a>
+                                <a href="#">20000以上</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="spanleft">材    质</span>
+                            <span class="spanright">
+                                <a href="#">不限</a>
+                                <a href="#">铂900</a>
+                                <a href="#"> 18K金</a>                              
+                            </span>
+                        </li>
+                        <li>
+                            <span class="spanleft">主钻石重</span>
+                            <span class="spanright">
+                                <a href="#">不限</a>
+                                <a href="#">30分以下</a>
+                                <a href="#"> 30-39分</a>   
+                                <a href="#">40-49分</a> 
+                                <a href="#">50-59分</a>  
+                                <a href="#"> 60-99分</a>   
+                                <a href="#"> 克拉钻 </a>                         
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="show-h-search">展开高级搜索</div>
+                    <div class="main-sort" id="mainSort"> 
+                        <ol>
+                            <a href="#">默认&or;</a>
+                            <a href="#">销量&or;</a>
+                            <a href="#">价格&or;</a>
+                            <a href="#">评价&or;</a>
+                            <a href="#">新品&or;</a>
+                        </ol>
+                        <span class="fr">共<strong>868</strong>款商品 　| 　1 / 65　　></span>
+                    </div>                  
+                </div>
+                <div class="list-content">
+                    <div class="productbox">
+                        <a href="#">
+                            <img src="image/detail2-1.jpg" alt="">
+                            <p><i>霓裳</i></p>
+                            <strong>￥2800</strong>
+                            <p><span>售出<i>2</i></span><span>评论<i>0</i></span></p>
+                             
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<!-- footer -->
+    <div class="footer-wrap"></div>
+    <script src="./../dist/js/all.js"></script>
+</body>
+</html>

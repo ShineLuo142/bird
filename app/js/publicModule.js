@@ -25,8 +25,8 @@ $(function(){
             let str = `<div class="top">
                 <div class="welcome">
                     <h1>欢迎进入钻石小鸟官网</h1>
-                    <a href="./login.html">登录</a>
-                    <a href="./register.html">注册</a>
+                    <span id="showlogin"  >登录</span>
+                    <span id="showregister"  >注册</span>
                 </div>
                 <ul class="topnav">
                     <li>
