@@ -549,33 +549,33 @@ var centerData=[{
 
 
     //banner 1 ajax请求：
-    $.get("./json/bigBanner.json", function(result){
+    $.get("./json/bigBanner.json", function (result) {
         let str = '';
-        for(let i=0;i<result.length;i++){
-        str += `
+        for (let i = 0; i < result.length; i++) {
+            str += `
         <div class="swiper-slide" style="background-image:url(${i.imgUrl})"></div>
         `
         }
         $(".swiper-wrapper.bigBanner").html(str)
         //index 1 banner:
         var swiper1 = new Swiper('.swiper-container', {
-        spaceBetween: 30,
-        effect: 'fade',
-        loop: true,
-        pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-        },
-        autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-        },
-        navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        },
+            spaceBetween: 30,
+            effect: 'fade',
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
         });
-        });
+    });
 
 
 

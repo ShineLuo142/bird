@@ -1,0 +1,109 @@
+.car-wrap{
+	.car{
+		width: 1180px;
+		margin: 0 auto;
+		.table-car{
+			width: 100%;
+			border-collapse:collapse;
+			text-align: center;
+			input[type=checkbox]{
+				height: 14px;
+				width: 14px;
+				position: relative;
+				cursor: pointer;
+				&::after{
+					position: absolute;
+					content: '';
+					top: -4px;
+					bottom: -4px;
+					left: -4px;
+					right: -4px;
+					cursor: pointer
+				}
+			}
+			thead{
+				tr{
+					th{
+						padding:5px 0; 
+						border-bottom: 1px solid #000000;
+						label{
+							cursor: pointer
+						}
+						input[type=checkbox]{
+							vertical-align: middle
+						}
+					}
+				}
+			}
+			tbody{
+				.item-delete{
+					cursor: pointer;
+				}
+			}
+			tfoot tr td{
+				padding:5px 0; 
+				border-top:1px solid #ececec
+			}
+			
+		}
+		.operation-shopping-car{
+			margin: 35px 0;
+			a{
+				cursor: pointer
+			}
+		}
+		.go-pay{
+			margin: 35px 0;
+			button{
+				width: 130px;
+				height: 32px;
+				cursor: pointer;
+				border: 0;
+				background: #ff8a81;
+				color: #fff;
+				font-family: Arial,"宋体";
+				font-size: 12px;
+				line-height: 32px;
+				text-align: center;
+				&:hover{
+					opacity: 0.85;
+					filter: alpha(opacity=85);
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+.my-confirm{
+	position: fixed;
+	top:0;
+	left:0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 243px;
+	height: 124px;
+	text-align: center;
+	background: #f8f8f8;
+	p{
+		line-height: 82px;
+		color: #666;
+	}
+	button{
+		width: 96px;
+		height: 30px;
+		margin:  0 8px;
+		line-height: 30px;
+		text-align: center;
+		border: 0;
+		font-family: Arial,"宋体";
+	}
+	.firstbutton{
+		color: white;
+		background: #ff8a81;
+		&:hover{
+			opacity: 0.85;
+		}
+	}
+
+}

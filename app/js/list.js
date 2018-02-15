@@ -16,8 +16,7 @@ $(function () {
             //商品列表展开改机搜索:
             $('.show-h-search').click(function () {
                 $(this).parent().children('ul').find('li').last().slideToggle();
-
-            })
+            }) 
         },
 
 
