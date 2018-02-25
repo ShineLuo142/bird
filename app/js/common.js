@@ -210,7 +210,10 @@ $(function(){
 					<span class="closeloginbg" id="loginMainClose">关闭</span>
 				</div>
 				<div class="loginform">
-					<input type="text" name="" placeholder="手机号" class="textype usertel">
+					<div class="">
+						<input type="text" name="" placeholder="手机号" class="textype usertel">
+						<span>1212</span>
+					</div>
 					<input type="password" name="" placeholder="密码" class="textype userpassword">
 					<div class="inputremenber clearfix">
 						<span class="loginradio"></span>
@@ -332,7 +335,21 @@ $(function(){
             oClose.onclick = function(){
                 oBox.style.display = "none";					
             }
-        }
+		},
+		checkPhone:function(dom){
+            var reg=/^[0-9]{11}$/
+			return 
+		},
+		checkPassword:function(){
+
+		},
+		checkEvent(){
+			$(".usertel").change(function(){
+				if(!/^[0-9]{11}$/.test($(this).val())){
+
+				}
+			})
+		}
     }
     new PublicModule()
 

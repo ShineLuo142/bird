@@ -19,12 +19,13 @@ $(function(){
             this.shapeHover();
             this.centerInputTxt();
             this.seachBtn();
-            var oBox = document.getElementById("loginMain");
-            var oNav = document.getElementById("loginMainHeader");
-            var oClose = document.getElementById("loginMainClose");
-            this.loginDragEvent(oBox,oNav,oClose);
+        //     var oBox = document.getElementById("loginMain");
+        //     var oNav = document.getElementById("loginMainHeader");
+        //     var oClose = document.getElementById("loginMainClose");
+        //     this.loginDragEvent(oBox,oNav,oClose);
             
-            this.loginDragEvent($("#registerMain")[0],$("#registerMainHeader")[0],$("#registerMainClose")[0])
+        //     this.loginDragEvent($("#registerMain")[0],$("#registerMainHeader")[0],$("#registerMainClose")[0])
+        // },
         },
         
         topNavEvent:()=>{
