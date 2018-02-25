@@ -1,0 +1,81 @@
+[
+    {
+        "id":"0",
+        "name": "Passion热情",
+        "img": "image/detail2-1.jpg",
+        "price": "26888",
+        "orginPrice":"13444",
+        "count": "33",
+        "comment": "22",
+        "innerRingText":"测试1",
+        "timeRingText":"测试2",
+        "orginPrice":"13444"
+    },
+    {
+        "id":"1",
+        "name": "Passion热情-白18K金钻石女戒",
+        "img": "image/detail2-1.jpg",
+        "price": "26888",
+        "count": "33",
+        "comment": "22",
+        "innerRingText":"测试3",
+        "timeRingText":"测试4",
+        "orginPrice":"13444"
+    },
+    {
+        "id":"2",
+        "name": "霓裳3",
+        "img": "image/detail2-1.jpg",
+        "price": "26888",
+        "count": "33",
+        "comment": "22",
+        "innerRingText":"测试6",
+        "timeRingText":"测试7",
+        "orginPrice":"13444"
+    },
+    {
+        "id":"3",
+        "name": "霓裳4",
+        "img": "image/detail2-1.jpg",
+        "price": "26888",
+        "count": "33",
+        "comment": "22",
+        "innerRingText":"测试7",
+        "timeRingText":"测试9",
+        "orginPrice":"13444"
+    },
+    {
+        "id":"4",
+        "name": "霓裳5",
+        "img": "image/detail2-1.jpg",
+        "price": "26888",
+        "count": "33",
+        "comment": "22",
+        "innerRingText":"文字",
+        "timeRingText":"测试文字",
+        "orginPrice":"13444"
+    },
+    {
+        "id":"5",
+        "name": "霓裳6",
+        "img": "image/detail2-1.jpg",
+        "price": "26888",
+        "count": "33",
+        "comment": "22",
+        "innerRingText":"文字",
+        "timeRingText":"测试文字",
+        "orginPrice":"13444"
+    },
+    {
+        "id":"6",
+        "name": "霓裳7",
+        "img": "image/detail2-1.jpg",
+        "price": "26888",
+        "count": "33",
+        "comment": "22",
+        "innerRingText":"文字",
+        "timeRingText":"测试文字",
+        "orginPrice":"13444"
+    }
+   
+]

@@ -4,7 +4,7 @@ $(function () {
         init: function () {
             this.navSlideToggle();
             this.showHSearchEvevt();
-            
+            this.getProductList()
         },
         navSlideToggle: function () {
             //商品列表导航slideToggle:
@@ -18,7 +18,22 @@ $(function () {
                 $(this).parent().children('ul').find('li').last().slideToggle();
             }) 
         },
-
+        getProductList(){
+            $.get("./json/productList.json", function (result) {
+                localStorage.productList = JSON.stringify(result)
+                let str = '';
+                for(let i = 0; i < result.length ; i++){
+                    let item = result[i];
+                    str += `<a href="product.html?id=${item.id}">
+                    <img src="${item.img}" alt="">
+                    <p><i>${item.name}</i></p>
+                    <strong>￥${item.price}</strong>
+                    <p><span>售出<i>${item.count}</i></span><span>评论<i>${item.comment}</i></span></p>
+                    </a>`
+                }
+                $(".productbox").html(str)
+            })
+        }
 
 
 

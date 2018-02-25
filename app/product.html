@@ -11,7 +11,9 @@
     <script src="./../static/js/jquery.olazyload.min.js"></script>
     <script src="./../static/js/jquery.swiper.min.js"></script>
     <script src="./../static/js/jquery.tdrag.js"></script>
-    <script src="./../static/js/magnifier.js"></script>
+    <script src="./../static/js/jquery.fly.min.js"></script>
+    <script src="./../static/js/jquery.jqzoom.js"></script>
+    
     <title>商品详情</title>
 </head>
 
@@ -501,30 +503,172 @@
     <div class="product-top">
         <p>选择心动款式</p>
     </div>
-    <div class="product-wrap">
-        <div id="magnifier">
-            <div class="small-box">
-                <img src="image/small01.jpg" alt="#">
-                <span class="hover"></span>
+    <div class="product-wrap clearfix">
+        <div class="lanrenzhijia fl">
+            <!-- 大图begin -->
+            <div id="preview" class="spec-preview">
+                <span class="jqzoom">
+                    <img jqimg="image/big01.jpg" src="image/small01.jpg" />
+                </span>
             </div>
-            <div class="thumbnail-box">
-                <a href="javascript:;" class="btn btn-prev"></a>
-                <a href="javascript:;" class="btn btn-next"></a>
-                <div class="list">
-                    <ul class="wrapper">
-                        <li class="item item-cur" data-src="image/small01.jpg">
-                            <img src="image/smaller01.jpg" alt="#">
+            <!-- 大图end -->
+            <!-- 缩略图begin -->
+            <div class="spec-scroll ">
+                <a class="prev">&lt;</a>
+                <a class="next">&gt;</a>
+                <div class="items" id='imgbox'>
+                    <ul>
+                        <li>
+                            <img bimg="image/big01.jpg" src="image/small01.jpg" onmousemove="preview(this);">
                         </li>
-                        <li class="item" data-src="image/small01.jpg">
-                            <img src="image/smaller01.jpg" alt="#">
+                        <li>
+                            <img bimg="image/big02.jpg" src="image/small02.jpg" onmousemove="preview(this);">
+                        </li>
+                        <li>
+                            <img bimg="image/big01.jpg" src="image/small01.jpg" onmousemove="preview(this);">
+                        </li>
+                        <li>
+                            <img bimg="image/big01.jpg" src="image/small01.jpg" onmousemove="preview(this);">
+                        </li>
+                        <li>
+                            <img bimg="image/big02.jpg" src="image/small02.jpg" onmousemove="preview(this);">
                         </li>
                        
-                        
+    
                     </ul>
                 </div>
             </div>
-            <div class="big-box">
-                <img src="image/big01.jpg" alt="#">
+    
+            <!-- 缩略图end -->
+    
+        </div>
+        <div class="product-right fl">
+            <h4>Passion热情</h4>
+            <p>
+                <span>价格</span><i>￥</i><i class="frist-i">20700</i>
+                <span>售出</span><i>409</i>
+                <span>评价</span><i>201</i>
+            </p>
+            <div class="product-information clearfix">
+                <ul class="fl">
+                    <li>品名</li>
+                    <li>材质</li>
+                    <li>手寸</li>
+                    <li>钻石</li>
+                    <li>配送</li>
+                </ul>
+                <ul class="fl">
+                    <li>18K金钻石戒指</li>
+                    <li> 白18K金</li>
+                    <li>12号如何测手寸</li>
+                    <li>主钻1颗  0.52克拉辅钻50颗  0.17克拉</li>
+                    <li> 2018-02-22</li>
+                </ul>               
+            </div>
+            <div class="product-more">
+                <a href="#">更多</a>
+                <a href="#" class="choose-more">选择其他同款现货</a>
+            </div>
+            <div class="add-shoppingcar">
+                <button class="button1 car-addcar">加入购物车</button>
+                <button class="button2">免息分期</button>
+                <button class="button3">专属定制</button>
+            </div>
+            <div class="share">
+                <span>分享</span>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+        </div>
+    </div>
+    <div class="productnav">
+        <ul class="clearfix">
+            <li class="active">商品详情</li><span>/</span>
+            <li>商品参数</li><span>/</span>
+            <li>全部评价  201</li><span>/</span>
+            <li>售后服务</li><span>/</span>
+            <li>更多现货</li><span>/</span>
+        </ul>
+        <div class="picture">
+            <a href="#"><img src="image/product01.jpg" alt=""></a>
+            <a href="#"><img src="image/product02.jpg" alt=""></a>
+            <a href="#"><img src="image/product03.jpg" alt=""></a>
+            <a href="#"><img src="image/product04.jpg" alt=""></a>
+            <a href="#"><img src="image/product05.jpg" alt=""></a>
+            <a href="#"><img src="image/product06.jpg" alt=""></a>
+            <a href="#"><img src="image/product07.jpg" alt=""></a>
+            <a href="#"><img src="image/product08.jpg" alt=""></a>
+            <a href="#"><img src="image/product09.jpg" alt=""></a>
+        </div>
+        <div class="price-explain">
+            <span>价格说明</span>
+           <p>1.　未划线价格：未划线价格（包括所有价格无前缀字样及前缀“价格”、“特惠”、“惠”字样的情况）是商品当前销售价格，具体的成交价可能因会员折扣、使用优惠券等发生变化，最终以订单结算页价格为准。</p>
+           <p>2.　划线价格：划线价格是该商品的吊牌价，是商品在无特殊优惠的情况下的正品零售价。</p>
+           <p>3.　如您发现活动商品售价或促销信息有异常，建议购买前联系我们。</p>
+        </div>
+        <div class="product-brand">
+            <div class="product-brand-top">
+                   <span class="active">精美包装<i>/</i></span>
+                   <span>权威认证<i>/</i></span>
+                   <span>贴心服务</span>
+
+            </div>
+            <div>
+                <div class="product-brand-con"><img src="image/product11.jpg" alt=""></div>
+                <div class="product-brand-con"><img src="image/product10.jpg" alt=""></div>
+                <div class="product-brand-con"><img src="image/product12.jpg" alt=""></div>
+            </div>
+        </div>
+        <div class="product-news clearfix">
+            <div class="product-news-left fl">
+                <div class="fl">
+                    <p>热门资讯</p>
+                    <p>六福钻戒在北京怎么样</p>                    
+                    <p>什么是翡翠 </p>                    
+                    <p>什么是玛瑙</p>                   
+                    <p> 影响铂金耳环多少钱一对的因素</p>                   
+                    <p>你非知不可的钻饰保养小秘招</p>                   
+                    <p>测量戒指尺寸的方式有哪些？</p>                   
+                    </div>
+                <div class="fl">
+                    <p>　</p>
+                    <p>什么是宝石和玉石</p>
+                    <p> 什么是虎晴石</p>
+                    <p>猫眼石和虎眼石有什么区别</p>
+                    <p>个性钻戒</p>
+                    <p>紫黄晶的鉴定（三）</p>
+                    <p>婚纱照组成的元素</p>
+                </div>
+            </div>
+            <div class="product-news-right fl">
+                <p>热门分类</p>
+
+                <a href="#">钻戒类别</a>
+                <a href="#"> 戒臂装饰</a>
+                <a href="#"> 镶嵌爪形</a>
+                <a href="#">主钻分数</a>
+                <a href="#">主钻形状</a>
+                <a href="#"> 钻戒材质</a>
+                <a href="#">钻戒价格</a>
+                <a href="#">情侣戒指的戴法</a>
+                <a href="#">生日礼物</a>
+                <a href="#">戒指图片</a>
+                <a href="#">铂金戒指价格</a>
+                <a href="#">婚戒定制中心</a>
+                <a href="#">蓝色婚礼</a>
+                <a href="#">结婚纪念日礼物</a>
+                <a href="#">金戒指价格</a>
+                <a href="#">婚礼主持人台词</a>
+                <a href="#">戒指尺寸对照表</a>
+                <a href="#">领结婚证需要婚检吗</a>
+                <a href="#">女生戒指戴法</a>
+                <a href="#">2018年结婚吉日</a>
+                <a href="#">铂金价格走势</a>
+                <a href="#">老婆生日礼物</a>
+                <a href="#">创意婚礼</a>
+                <a href="#">婚检内容</a> 
             </div>
         </div>
 
@@ -535,7 +679,7 @@
 
 
 
-
+    <div class="aside-box"></div>
     <!-- footer -->
     <div class="footer-wrap"></div>
     <script src="./../dist/js/all.js"></script>

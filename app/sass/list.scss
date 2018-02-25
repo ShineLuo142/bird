@@ -187,16 +187,17 @@
 
             .list-content{
                 .productbox{
-                    width: 300px;
-                    height: 405px;
-                    border-bottom: 1px solid #d6d6d6;
+                    // width: 300px;
+                    // height: 405px;
+                    // border-bottom: 1px solid #d6d6d6;
                     a{
-                        display: block;
+                      
+                        height: 340px;
+                        padding-bottom: 20px;
+                        box-sizing: border-box;
                         float: left;
                         text-align: center;
-                        margin-right: 24px;
-                        margin-top: 23px;
-                        padding-bottom: 20px;
+                        margin-right: 14px;
                         &:hover{
                             border-bottom: 6px solid #feb8ae;
                         }

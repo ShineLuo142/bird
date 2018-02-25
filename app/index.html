@@ -12,69 +12,84 @@
 		<script src="./../static/js/jquery.tdrag.js"></script>
 	</head>
 	<body>
+		<div class="login-main">
+			
+			<div class="loginbox drag" id="loginMain">
+				<div class="loginheader clearfix handler" id="loginMainHeader">
+					<h3>会员登录</h3>
+					<span class="closeloginbg" id="loginMainClose">关闭</span>
+				</div>
+				<div class="loginform">
+					<input type="text" name="" placeholder="手机号" class="textype usertel">
+					<input type="password" name="" placeholder="密码" class="textype userpassword">
+					<div class="inputremenber clearfix">
+						<span class="loginradio"></span>
+						<span>自动登录</span>
+						<a href="#">忘记密码</a>
+					</div>
+					<input type="submit" name="" id="sub" value="登录">
+			
+					<div class="loginfooter">
+						<div class="loginfooter-line">
+							<i class="line"></i>
+							<span>合作网站账号登录</span>
+							<i class="line"></i>
+						</div>
+						<div class="loginfooter-img">
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+							<a href="#"></a>
+						</div>
+					</div>
+				</div>
+			
+			
+			</div>
+			<div class="registerbox drag" id="registerMain">
+				<div class="registerheader handler clearfix" id="registerMainHeader">
+					<h3>欢迎注册</h3>
+					<div class="h3right">
+						<span class="closeloginbg" id="registerMainClose">关闭</span>
+					</div>
+				</div>
+				<div class="registerform">
+					<input type="text" name="" placeholder="请输入手机号" class="textype usertel">
+					<span></span>
+					<div class="buttomdiv">
+						<input type="text" name="" placeholder="6位验证码" class="identifying-code">
+						<input type="button" name="" value="免费获取手机验证码" class="identifyingbutton">
+					</div>
+					<span></span>
+					<input type="password" name="" placeholder="6-20位大小写字母，数字及'-'、'_'组合" class="textype userpassword">
+					<span></span>
+					<input type="password" name="" placeholder="请再次输入密码" class="textype userpassword">
+					<span></span>
+					<div class="inputremenber clearfix">
+						<span class="loginradio"></span>
+						<span>已阅读并同意
+							<a href="#">《钻石小鸟用户服务协议》</a>
+						</span>
+					</div>
+					<input type="submit" name="" id="sub" value="注册">
+				</div>
+			
+			
+			</div>
+		</div>
+
+			
 		<div class="top-wrap">
 		
 		</div>
-		<div class="loginbg">
-			<div class="logindiv">
-				<div class="loginbox drag" >
-					<div class="loginheader clearfix handler">
-						<h3>会员登录</h3><span class="closeloginbg">关闭</span>
-					</div>
-					<div class="loginform">
-						<input type="text" name=""  placeholder="手机号" class="textype usertel">
-						<input type="password" name=""  placeholder="密码"class="textype userpassword">
-						<div class="inputremenber clearfix">
-							<span class="loginradio"></span><span>自动登录</span><a href="#">忘记密码</a>
-						</div>
-						<input type="submit" name="" id="sub" value="登录">
-				   
-						<div class="loginfooter">
-							<div class="loginfooter-line">
-								<i class="line"></i>
-								<span>合作网站账号登录</span>
-								<i class="line"></i>
-							</div>
-							<div class="loginfooter-img">
-								<a href="#"></a>
-								<a href="#"></a>
-								<a href="#"></a>
-								<a href="#"></a>
-							</div>
-						</div>
-					</div>
-				   
-	
-				</div>
-				<div class="registerbox drag">
-						<div class="registerheader handler clearfix">
-							<h3>欢迎注册</h3><div class="h3right"><span class="closeloginbg">关闭</span></div>
-						</div>
-						<div class="registerform">
-							<input type="text" name=""  placeholder="请输入手机号" class="textype usertel">
-							<span></span>
-							<div class="buttomdiv">
-								<input type="text" name=""  placeholder="6位验证码" class="identifying-code">
-								<input type="button" name=""  value="免费获取手机验证码" class="identifyingbutton">
-							</div> 
-						   <span></span>
-							<input type="password" name=""  placeholder="6-20位大小写字母，数字及'-'、'_'组合" class="textype userpassword">
-							<span></span>
-							<input type="password" name="" placeholder="请再次输入密码"class="textype userpassword">
-							<span></span>
-							<div class="inputremenber clearfix">
-								<span class="loginradio"></span><span>已阅读并同意<a href="#">《钻石小鸟用户服务协议》</a></span>
-							</div>
-							<input type="submit" name="" id="sub" value="注册">                                          
-						</div>
-					   
-		
-					</div>
+		<!-- <div class="loginbg">
+			<div class="logindiv"> -->
+				
 			
-			</div>
+			<!-- </div>
 	
 	
-		</div>
+		</div> -->
 
 		<div class="search-wrap">
 			<div class="search">
@@ -530,14 +545,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="aside">
-				<a href="#">&nbsp</a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-				<a href="#"><div></div></a>
-		</div>
-		<div class="gotop"></div>
+		
+		
 		<!-- //banner: -->
 		<div class="banner">
 			<div class="swiper-container">
@@ -808,7 +817,7 @@
 
 
 
-
+	<div class="aside-box"></div>
 <!-- footer: -->
         <div class="footer-wrap">
 		

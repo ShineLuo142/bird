@@ -1,25 +1,46 @@
 $(_=>{
     let obj = {
         init(){
-            this.shoppingCarHtml(this.shoppingData())
+            if(localStorage.shoppingData){
+                this.shoppingAllData =  JSON.parse(localStorage.shoppingData) ;
+                localStorage.shoppingCarNum = this.shoppingAllData.length;
+                this.shoppingCarHtml(this.shoppingAllData)
+            }else{
+                this.shoppingCarHtml()
+            }
+            
+           
             this.selectEvent();
+            this.clearShoppingCar()
         },
         shoppingCarHtml(data=[]){
+            
             let str = '';
             for(let i = 0 ; i < data.length ;i ++){
-                let item = data[i]
+                let item = data[i],isChecked = '';
+                if(data[i].checked){
+                    str += `
+                    <tr>
+                        <td>
+                            <input type="checkbox" checked>
+                        </td>
+                    `
+                }else{
+                    str += `
+                    <tr>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                    `
+                }
                 str += `
-                <tr>
-                    <td>
-                        <input type="checkbox">
-                    </td>
                     <td class="goods-info">
-                        <img src="${item.imgUrl}" alt="商品小图">
+                        <img src="./image/shopping-car01.jpg" alt="商品小图">
                         <span>${item.name} </span>
                     </td>
                     <td>${item.innerRingText}</td>
                     <td>${item.timeRingText}</td>
-                    <td>${item.fingerSize}</td>
+                   
                     <td>${item.orginPrice}</td>
                     <td>${item.price}</td>
                     <td class="item-delete" data-num=${i}>删除</td>
@@ -37,7 +58,7 @@ $(_=>{
                     innerRingText:"大淑女",
                     timeRingText:"老肥1",
                     fingerSize:"12.0",
-                    orginPrice:"1233",
+                    orginPrice:"13444",
                     price:"13444"
                 },
                 {
@@ -46,10 +67,11 @@ $(_=>{
                     innerRingText:"大淑女",
                     timeRingText:"老肥2",
                     fingerSize:"12.0",
-                    orginPrice:"1233",
+                    orginPrice:"13444",
                     price:"13444"
                 }
             ]
+            localStorage.shoppingCarNum = data.length;
             return data
         },
         selectEvent(){
@@ -65,17 +87,20 @@ $(_=>{
                 domList.each(function(index,dom){
                     if(!$(dom).is(':checked')){
                         temp = false
+                    }else{
+                        that.shoppingAllData[index].checked = true
                     }
                 })
                 $("#selectAll").prop('checked',temp)
                 that.countMoney('2',domList)
+                console.log(that.shoppingAllData,'that.shoppingAllData')
             })
 
         },
         countMoney(type,dom){
             //type:1为全选按钮操作，2为单个按钮操作
             let payNum = 0;
-            let data = this.shoppingData();
+            let data = this.shoppingAllData;
             if(type == '1'){
                 if(dom.is(':checked')){
                     for(let i = 0 ; i < data.length; i++){
@@ -109,15 +134,30 @@ $(_=>{
             })
         },
         deleteItem(){
-            let that = this,shoppingData = this.shoppingData();
+            let that = this,shoppingData = this.shoppingAllData;
             $(".item-delete").click(function(){
                 let num = $(this).data('num')
                 //console.log(  $(this).data('num'))
                 that.selfComfirm('确定要删除吗？',function(){
-                    let tempData = shoppingData.filter((ele,index)=>{
+                    that.shoppingAllData = shoppingData.filter((ele,index)=>{
                         return index != num 
                     })
-                    that.shoppingCarHtml(tempData)
+                    localStorage.shoppingData = JSON.stringify(that.shoppingAllData)
+                    that.shoppingCarHtml(that.shoppingAllData)
+                  
+                    that.selectEvent(); 
+                    $('body').find('.my-confirm').remove();
+                })
+            })
+        },
+        clearShoppingCar(){
+            let that = this
+            $("#clearShoppingCar").click(function(){
+                that.selfComfirm('确定要删除吗？',function(){
+                   
+                    localStorage.shoppingData = '[]'
+                    that.shoppingCarHtml('')
+
                     $('body').find('.my-confirm').remove();
                 })
             })

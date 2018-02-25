@@ -18,6 +18,13 @@ $(function(){
             this.recommendLisHover();
             this.shapeHover();
             this.centerInputTxt();
+            this.seachBtn();
+            var oBox = document.getElementById("loginMain");
+            var oNav = document.getElementById("loginMainHeader");
+            var oClose = document.getElementById("loginMainClose");
+            this.loginDragEvent(oBox,oNav,oClose);
+            
+            this.loginDragEvent($("#registerMain")[0],$("#registerMainHeader")[0],$("#registerMainClose")[0])
         },
         
         topNavEvent:()=>{
@@ -139,7 +146,59 @@ $(function(){
                     that.productIndex += 1; 
                 },2000)
             })
+        },
+        seachBtn(){
+            $(".searchsub").click(function(){
+                location.href = "./list.html"
+            })
+        },
+        loginDragEvent(oBox,oNav,oClose){ 
+            // var oBox = document.getElementById("loginMain");
+            // var oNav = document.getElementById("loginMainHeader");
+            // var oClose = document.getElementById("loginMainClose");
+            console.log(oBox,oNav)
+            //onmousedown
+            oNav.onmousedown = function(e){
+                e = e || event;
+                if (e.preventDefault) {
+                    e.preventDefault(); //阻止浏览器默认行为，非IE
+                }else {
+                    e.returnValue = false; //IE
+                }
+                
+                var disX = e.pageX - oBox.offsetLeft;
+                var disY = e.pageY - oBox.offsetTop;
+                
+                //onmousemove
+                document.onmousemove = function(e){
+                    oBox.style.margin='0'
+                    e = e || event;
+                    oBox.style.left = e.pageX - disX + "px";
+                    oBox.style.top = e.pageY - disY + "px";
+                    
+                }
+                //onmouseup
+                document.onmouseup = function(){
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                }
+                
+                
+            }
+            oClose.onmousedown = function(e){
+                e = e || event;
+                if (e.stopPropagation) {
+                    e.stopPropagation(); //非IE,阻止冒泡
+                }else {
+                    e.cancelBubble = true; //IE
+                }
+            }
+            //关闭
+            oClose.onclick = function(){
+                oBox.style.display = "none";					
+            }
         }
+       
 
     }
     new HoverEvent();
@@ -160,13 +219,13 @@ $(function(){
         },
         loginShowEvent:function(){
             $('#showlogin').click(function(){
-                $('.loginbg').show();
+                $('.login-main').show();
                 $('.loginbox').show().siblings().hide();            
             })
         },
         registerShowEvent:function(){
             $('#showregister').click(function(){
-                $('.loginbg').show();
+                $('.login-main').show();
                 $('.registerbox').show().siblings().hide();
            })
         },
@@ -535,14 +594,14 @@ var centerData=[{
     //懒加载：
     $("img.lazy").lazyload({effect: "fadeIn"});
 
-    //登录框拖拽:  
-    $('.drag').each(function(index){
-        $(this).myDrag({
-            randomPosition:true,
-            direction:'all',
-            handler:'.handler',
-        });
-    });
+    // //登录框拖拽:  
+    // $('.drag').each(function(index){
+    //     $(this).myDrag({
+    //         randomPosition:true,
+    //         direction:'all',
+    //         handler:'.handler',
+    //     });
+    // });
 
         
       
@@ -578,7 +637,53 @@ var centerData=[{
     });
 
 
-
-
+    function loginDrag(){
+        
+        var oBox = document.getElementById("loginMain");
+        var oNav = document.getElementById("loginMainHeader");
+        var oClose = document.getElementById("loginMainClose");
+        
+        //onmousedown
+        oNav.onmousedown = function(e){
+            e = e || event;
+            if (e.preventDefault) {
+                e.preventDefault(); //阻止浏览器默认行为，非IE
+            }else {
+                e.returnValue = false; //IE
+            }
+            
+            var disX = e.pageX - oBox.offsetLeft;
+            var disY = e.pageY - oBox.offsetTop;
+            
+            //onmousemove
+            document.onmousemove = function(e){
+                oBox.style.margin='0'
+                e = e || event;
+                oBox.style.left = e.pageX - disX + "px";
+                oBox.style.top = e.pageY - disY + "px";
+                
+            }
+            //onmouseup
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+            
+            
+        }
+        oClose.onmousedown = function(e){
+            e = e || event;
+            if (e.stopPropagation) {
+                e.stopPropagation(); //非IE,阻止冒泡
+            }else {
+                e.cancelBubble = true; //IE
+            }
+        }
+        //关闭
+        oClose.onclick = function(){
+            oBox.style.display = "none";					
+        }
+    }
+    loginDrag();
 })
 
