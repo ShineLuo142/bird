@@ -14,7 +14,9 @@ $(function(){
             this.loginDragEvent(oBox,oNav,oClose);
             
             this.loginDragEvent($("#registerMain")[0],$("#registerMainHeader")[0],$("#registerMainClose")[0])
-        
+			this.checkLoginEvent();
+			this.loginEvent()
+			this.checkRegisterEvent()
         },
         initHead(){
             let str = this.headHtmlString();
@@ -210,12 +212,15 @@ $(function(){
 					<span class="closeloginbg" id="loginMainClose">关闭</span>
 				</div>
 				<div class="loginform">
-					<div class="">
+					<div class="item-input">
 						<input type="text" name="" placeholder="手机号" class="textype usertel">
-						<span>1212</span>
+						<span class="warning usertelWarning"></span>
 					</div>
-					<input type="password" name="" placeholder="密码" class="textype userpassword">
-					<div class="inputremenber clearfix">
+					<div class="item-input">
+						<input type="password" name="" placeholder="密码" id="loginPassword" class="textype userpassword">
+						<span class="warning userpasswordWarning"></span>
+					</div>
+						<div class="inputremenber clearfix">
 						<span class="loginradio"></span>
 						<span>自动登录</span>
 						<a href="#">忘记密码</a>
@@ -247,17 +252,23 @@ $(function(){
 					</div>
 				</div>
 				<div class="registerform">
-					<input type="text" name="" placeholder="请输入手机号" class="textype usertel">
-					<span></span>
+				<div class="item-input">
+					<input type="text" name="" placeholder="请输入手机号" class="textype userRegisterTel">
+					<span class="warning userRegisterTelWarning"></span>
+				</div>
 					<div class="buttomdiv">
 						<input type="text" name="" placeholder="6位验证码" class="identifying-code">
 						<input type="button" name="" value="免费获取手机验证码" class="identifyingbutton">
 					</div>
 					<span></span>
-					<input type="password" name="" placeholder="6-20位大小写字母，数字及'-'、'_'组合" class="textype userpassword">
-					<span></span>
-					<input type="password" name="" placeholder="请再次输入密码" class="textype userpassword">
-					<span></span>
+					<div class="item-input">
+					<input type="password" name="" placeholder="6-20位大小写字母，数字及'-'、'_'组合" class="textype userpassword1">
+					<span class="warning userpassword1Warning"></span>
+					</div>
+					<div class="item-input">
+						<input type="password" name="" placeholder="请再次输入密码" class="textype userpassword2">
+						<span class="warning userpassword2Warning"></span>
+					</div>
 					<div class="inputremenber clearfix">
 						<span class="loginradio"></span>
 						<span>已阅读并同意
@@ -336,17 +347,59 @@ $(function(){
                 oBox.style.display = "none";					
             }
 		},
-		checkPhone:function(dom){
-            var reg=/^[0-9]{11}$/
-			return 
-		},
-		checkPassword:function(){
-
-		},
-		checkEvent(){
+		
+		checkLoginEvent(){
 			$(".usertel").change(function(){
 				if(!/^[0-9]{11}$/.test($(this).val())){
+					
+					$(".usertelWarning").html("请输入正确的手机号码")
+				}else{
+					
+					$(".usertelWarning").html("")
+				}
+			})
+		
+		},
+		checkRegisterEvent(){
+			$(".userRegisterTel").change(function(){
+				if(!/^[0-9]{11}$/.test($(this).val())){
+					
+					$(".userRegisterTelWarning").html("请输入正确的手机号码")
+				}else{
+					
+					$(".userRegisterTelWarning").html("")
+				}
+			})
+			$(".userpassword1").change(function(){
+				if(!/^\w{6,20}$/.test($(this).val())){
+					$(".userpassword1Warning").html("请输入6-20位大小写字母，数字及'-'、'_'组合")
+				}else{
+					$(".userpassword1Warning").html("")
+				}
+			})
+			$(".userpassword2").change(function(){
+				if($(".userpassword1").val() != $(this).val()){
+					$(".userpassword2Warning").html("请输入相同的密码")
+				}else{
+					$(".userpassword2Warning").html("")
+				}
+			})
+		
+		},
+		loginEvent(){
+			let temp;
+			$("#sub").click(_=>{
+				if(!/^[0-9]{11}$/.test($(".usertel").val())){
+					temp = false
+					$(".usertelWarning").html("请输入正确的手机号码")
+				}else{
+					temp = true
+					$(".usertelWarning").html("")
+				}
+				if(temp && $("#loginPassword").val()){
 
+				}else{
+					return
 				}
 			})
 		}
