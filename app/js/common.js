@@ -62,9 +62,12 @@ $(function(){
 			}
 		},
         headHtmlString(){
+			if(!localStorage.shoppingCarNum){
+				localStorage.shoppingCarNum = 0
+			}
             let str = `<div class="top">
                 <div class="welcome">
-                    <h1>欢迎<span id="userName"></span>进入钻石小鸟官网</h1>
+                    <h1>欢迎<a id="userName" href="index.html"></a>进入钻石小鸟官网</h1>
                     <span id="showlogin"  >登录</span>
                     <span id="showregister"  >注册</span>
                 </div>

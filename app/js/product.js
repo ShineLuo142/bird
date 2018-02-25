@@ -39,6 +39,8 @@ $(_=>{
            
             if(temp){
                 id = temp.split("=")[1]
+            }else{
+                return
             }
             let itemProduct = JSON.parse(localStorage.productList)[id]
             $(".car-addcar").unbind('click').click(function(event){
