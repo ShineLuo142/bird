@@ -4,7 +4,8 @@ $(function () {
         init: function () {
             this.navSlideToggle();
             this.showHSearchEvevt();
-            this.getProductList()
+            this.getProductList();
+            this.lazyOnload();
         },
         navSlideToggle: function () {
             //商品列表导航slideToggle:
@@ -19,20 +20,25 @@ $(function () {
             }) 
         },
         getProductList(){
+            let that=this;
             $.get("./json/productList.json", function (result) {
                 localStorage.productList = JSON.stringify(result)
                 let str = '';
                 for(let i = 0; i < result.length ; i++){
                     let item = result[i];
                     str += `<a href="product.html?id=${item.id}">
-                    <img src="${item.img}" alt="">
+                    <img class="lazy" data-original="${item.img}"width="300" height="250" >
                     <p><i>${item.name}</i></p>
                     <strong>￥${item.price}</strong>
                     <p><span>售出<i>${item.count}</i></span><span>评论<i>${item.comment}</i></span></p>
                     </a>`
                 }
                 $(".productbox").html(str)
+                that.lazyOnload();
             })
+        },
+        lazyOnload(){
+            $("img.lazy").lazyload({effect: "fadeIn"});
         }
 
 
