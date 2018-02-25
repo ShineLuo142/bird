@@ -142,6 +142,15 @@
                 }
             
             }
+            .item-input{
+                position: relative;
+                .warning{
+                    position: absolute;
+                    left: 50px;
+                    top: 38px;
+                    color: red
+                }
+            }
 
 
         }
@@ -185,6 +194,16 @@
             background-color: #fcedea;
             margin: 0 auto;
             padding-top: 45px;
+            .item-input{
+                position: relative;
+                margin-bottom: 30px;
+                .warning{
+                    position: absolute;
+                    left: 50px;
+                    top: 38px;
+                    color: red
+                }
+            }
             .textype{
                 height: 34px;
                 display: block;
