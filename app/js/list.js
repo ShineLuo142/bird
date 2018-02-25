@@ -5,7 +5,7 @@ $(function () {
             this.navSlideToggle();
             this.showHSearchEvevt();
             this.getProductList();
-            this.lazyOnload();
+           
         },
         navSlideToggle: function () {
             //商品列表导航slideToggle:

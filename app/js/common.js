@@ -16,7 +16,21 @@ $(function(){
             this.loginDragEvent($("#registerMain")[0],$("#registerMainHeader")[0],$("#registerMainClose")[0])
 			this.checkLoginEvent();
 			this.loginEvent()
-			this.checkRegisterEvent()
+			this.checkRegisterEvent();
+			if(!localStorage.shoppingData){
+				localStorage.shoppingData = '';
+			}
+			if(!localStorage.shoppingCarNum){
+				localStorage.shoppingCarNum = 0;
+			}
+			
+			if(!localStorage.isLogin){
+				localStorage.isLogin = 0
+			}
+			if(localStorage.userName){
+				$("#userName").html(localStorage.userName);
+			}
+			
         },
         initHead(){
             let str = this.headHtmlString();
@@ -50,7 +64,7 @@ $(function(){
         headHtmlString(){
             let str = `<div class="top">
                 <div class="welcome">
-                    <h1>欢迎进入钻石小鸟官网</h1>
+                    <h1>欢迎<span id="userName"></span>进入钻石小鸟官网</h1>
                     <span id="showlogin"  >登录</span>
                     <span id="showregister"  >注册</span>
                 </div>
@@ -389,17 +403,30 @@ $(function(){
 		loginEvent(){
 			let temp;
 			$("#sub").click(_=>{
+				let userName = ''
 				if(!/^[0-9]{11}$/.test($(".usertel").val())){
 					temp = false
 					$(".usertelWarning").html("请输入正确的手机号码")
 				}else{
+					userName = $(".usertel").val();
 					temp = true
 					$(".usertelWarning").html("")
 				}
 				if(temp && $("#loginPassword").val()){
-
-				}else{
-					return
+					$.get('./json/user.json',function(data){
+						let a = data.filter(function(item,index){
+							return item.phone == userName && $("#loginPassword").val() == item.password
+						})
+						if(a.length == 1){
+							$("#loginMainClose").click();
+							localStorage.userName = userName
+							$("#userName").html(localStorage.userName);
+							localStorage.isLogin = 1
+						}else{
+							localStorage.isLogin = 0
+							alert("账号不存在或密码错误")
+						}
+					})
 				}
 			})
 		}

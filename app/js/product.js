@@ -42,7 +42,10 @@ $(_=>{
             }
             let itemProduct = JSON.parse(localStorage.productList)[id]
             $(".car-addcar").unbind('click').click(function(event){
-               
+                if(localStorage.isLogin == 0){
+                    $("#showlogin").click();
+                    return
+                }
                 var addcar = $(this);
                 var img = $("#imgbox").find('img').attr('src');
                 var flyer = $('<img class="u-flyer" src="'+img+'">');
@@ -58,15 +61,18 @@ $(_=>{
                         height: 0
                     },
                     onEnd: function(){
+                        let tempaArr;
                         if(!localStorage.shoppingData){
-                            localStorage.shoppingData = JSON.stringify([itemProduct])
+                            localStorage.shoppingData = JSON.stringify([itemProduct]);
+                            tempaArr =[itemProduct]
                         }else{
-                            let arr = JSON.parse(localStorage.shoppingData)
-                            arr.push(itemProduct)
-                            localStorage.shoppingData = JSON.stringify(arr)
+                            tempaArr = JSON.parse(localStorage.shoppingData)
+                            tempaArr.push(itemProduct)
+                            localStorage.shoppingData = JSON.stringify(tempaArr)
                         }
                         
                         localStorage.shoppingCarNum = parseInt(localStorage.shoppingCarNum) + 1;
+                        $(".shop-count").text(tempaArr.length)
                         this.destory();
                     }
                 });
@@ -76,7 +82,10 @@ $(_=>{
            
             //图片放大镜效果
             $(function(){
-                $(".jqzoom").jqueryzoom({xzoom:380,yzoom:410});
+                if($(".jqzoom").length >0){
+                    $(".jqzoom").jqueryzoom({xzoom:380,yzoom:410});
+                }
+                
             });
             
             //图片预览小图移动效果,页面加载时触发
