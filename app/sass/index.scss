@@ -159,8 +159,11 @@
         width: 370px;			
         height: 460px;
         position: fixed;
-        top:30% ;
+        top:0% ;
+        bottom: 0;
+        left: 0;
         right: 0 ;
+        margin: auto;
         display: none;
         z-index: 999;
         .registerheader{

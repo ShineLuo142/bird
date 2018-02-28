@@ -179,8 +179,8 @@ $(function(){
 						<a href="#">海景房</a><span>|</span>
 						<a href="#">装修网</a><span>|</span>
 						<a href="#">钻石小鸟</a><span>|</span>
-						<a href="#">网络114</a><span>|</span>
-						<a href="#"></a><span>|</span> 
+						<a href="#">网络114</a><span></span>
+						
 					</p>
 				</div>
 				<div class="footimg">
@@ -198,7 +198,7 @@ $(function(){
 			let str = `
 			<div class="aside">
 				<a href="#">&nbsp</a>
-				<a href="shoppingcar.html"  id="car-end"></a>
+				<a href="shoppingcar.html"  id="car-end" class="car-end shop-count">${localStorage.shoppingCarNum}</a>
 				<a href="#"></a>
 				<a href="#"></a>
 				<a href="#"><div></div></a>

@@ -22,14 +22,14 @@ $(_=>{
                     str += `
                     <tr>
                         <td>
-                            <input type="checkbox" checked>
+                            <input type="checkbox" checked="checked">
                         </td>
                     `
                 }else{
                     str += `
                     <tr>
                         <td>
-                            <input type="checkbox">
+                            <input type="checkbox" >
                         </td>
                     `
                 }
@@ -55,8 +55,8 @@ $(_=>{
                 {
                     imgUrl:"./image/shopping-car01.jpg",
                     name:"Passion热情-白18K金钻石女戒",
-                    innerRingText:"大淑女",
-                    timeRingText:"老肥1",
+                    innerRingText:"333",
+                    timeRingText:"333",
                     fingerSize:"12.0",
                     orginPrice:"13444",
                     price:"13444"
@@ -64,8 +64,8 @@ $(_=>{
                 {
                     imgUrl:"./image/shopping-car01.jpg",
                     name:"Passion热情-白18K金钻石女戒",
-                    innerRingText:"大淑女",
-                    timeRingText:"老肥2",
+                    innerRingText:"222",
+                    timeRingText:"222",
                     fingerSize:"12.0",
                     orginPrice:"13444",
                     price:"13444"
