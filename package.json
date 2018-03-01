@@ -1,15 +1,15 @@
 {
-  "name": "test",
+  "name": "bird",
   "version": "1.0.0",
-  "description": "This is for study gulp project !",
-  "homepage": "",
+  "description": "",
+  "homepage": "index.html",
   "repository": {
     "type": "git",
     "url": "https://git.oschina.net/xxxx"
   },
   "author": {
-    "name": "",
-    "email": "@qq.com"
+    "name": "Shine Luo",
+    "email": "840627929@qq.com"
   },
   "license": "ISC",
   "devDependencies": {
